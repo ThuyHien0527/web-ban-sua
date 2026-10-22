@@ -1,0 +1,589 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TH true MILK - True Happiness</title>
+
+    <!-- FontAwesome Icon -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- File CSS hệ thống chuẩn -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- HEADER CHUẨN TH TRUE MILK -->
+    <header>
+      <div class="nav-container">
+        <div class="logo">
+          <a href="index.html">
+            <img src="images/banners/logo.png" alt="TH true MILK" />
+          </a>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html">TRANG CHỦ</a></li>
+            <li><a href="products.html">SẢN PHẨM</a></li>
+            <li><a href="#san-pham-noi-bat">SẢN PHẨM NỔI BẬT</a></li>
+            <li><a href="#th-true-mart">CỬA HÀNG</a></li>
+            <li><a href="#goc-suc-khoe">CHUYÊN GIA DINH DƯỠNG</a></li>
+            <li><a href="#tai-che">TÁI CHẾ</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-right-tools">
+          <div class="search-tool-wrapper">
+            <!-- Icon Kính lúp bấm để mở/đóng ô tìm kiếm -->
+            <button
+              type="button"
+              class="btn-search-toggle"
+              id="searchToggleBtn"
+              onclick="toggleSearchBar()"
+              title="Tìm kiếm"
+            >
+              <i class="fa fa-search"></i>
+            </button>
+            <form
+              class="search-expand-form"
+              id="searchExpandForm"
+              action="search.html"
+              method="GET"
+            >
+              <input
+                type="text"
+                name="q"
+                id="searchExpandInput"
+                class="search-expand-input"
+                placeholder="Nhập tên sản phẩm..."
+                required
+              />
+              <button type="submit" class="search-expand-btn" title="Tìm kiếm">
+                <i class="fa fa-search"></i>
+              </button>
+            </form>
+          </div>
+
+          <div class="lang-selector">
+            <button
+              type="button"
+              class="lang-selector-btn"
+              id="langSelectorBtn"
+              aria-expanded="false"
+              aria-label="Chọn quốc gia"
+            >
+              <img id="selectedFlag" src="https://flagcdn.com/w20/vn.png" alt="VN" />
+              <span id="selectedLang">VN</span>
+              <i class="fa fa-caret-down"></i>
+            </button>
+
+            <div class="lang-dropdown" id="langDropdown">
+              <button type="button" data-code="VN" data-flag="vn">
+                <img src="https://flagcdn.com/w20/vn.png" alt="" />
+                Việt Nam
+              </button>
+
+              <button type="button" data-code="US" data-flag="us">
+                <img src="https://flagcdn.com/w20/us.png" alt="" />
+                United States
+              </button>
+
+              <button type="button" data-code="GB" data-flag="gb">
+                <img src="https://flagcdn.com/w20/gb.png" alt="" />
+                United Kingdom
+              </button>
+
+              <button type="button" data-code="JP" data-flag="jp">
+                <img src="https://flagcdn.com/w40/jp.png" alt="" />
+                日本
+              </button>
+
+              <button type="button" data-code="KR" data-flag="kr">
+                <img src="https://flagcdn.com/w20/kr.png" alt="" />
+                대한민국
+              </button>
+
+              <button type="button" data-code="CN" data-flag="cn">
+                <img src="https://flagcdn.com/w20/cn.png" alt="" />
+                中国
+              </button>
+
+              <button type="button" data-code="TH" data-flag="th">
+                <img src="https://flagcdn.com/w20/th.png" alt="" />
+                ประเทศไทย
+              </button>
+
+              <button type="button" data-code="FR" data-flag="fr">
+                <img src="https://flagcdn.com/w20/fr.png" alt="" />
+                France
+              </button>
+            </div>
+          </div>
+
+          <!-- Khối Icon Tài Khoản mới thêm (Rê chuột hiện Đăng nhập / Đăng ký) -->
+          <div class="account-dropdown">
+            <a href="login.html" class="account-icon-link" title="Tài khoản">
+              <i class="fa fa-user"></i>
+            </a>
+            <div class="account-menu">
+              <a href="login.html"><i class="fa fa-sign-in"></i> Đăng nhập</a>
+              <a href="register.html"><i class="fa fa-user-plus"></i> Đăng ký</a>
+            </div>
+          </div>
+
+          <a href="cart.html" class="cart-icon-link">
+            <i class="fa fa-shopping-cart"></i>
+            <span id="cart-count-badge">0</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- BANNER SLIDER TOÀN MÀN HÌNH -->
+    <section class="banner-section">
+      <div id="sliderImageContainer">
+        <img id="bannerImage" src="images/banners/banner_1.jpg" alt="TH true MILK Banner" />
+      </div>
+      <button class="banner-arrow prev-arrow" onclick="prevSlide()">❮</button>
+      <button class="banner-arrow next-arrow" onclick="nextSlide()">❯</button>
+    </section>
+
+    <!-- TH TRUE MILK - FLASH SALE -->
+    <section class="flash-sale-section" id="flash-sale">
+      <div class="flash-sale-banner">
+        <div class="flash-sale-brand flash-sale-brand-image">
+          <img src="images/products/suathanhtrungcoduong450.png" alt="Sản phẩm TH true MILK" />
+        </div>
+
+        <div class="flash-sale-info">
+          <span class="flash-sale-eyebrow"> ĐẶC QUYỀN TƯƠI LÀNH </span>
+
+          <h2>Tươi lành mỗi ngày<span class="flash-sale-leaf">✦</span></h2>
+
+          <p class="flash-sale-description">
+            Chọn điều tốt lành từ thiên nhiên,<br />
+            dành tặng bạn mức giá thật dễ thương.
+          </p>
+        </div>
+
+        <div class="flash-sale-timer">
+          <div class="flash-sale-timer-label"><span>◷</span> KẾT THÚC SAU</div>
+
+          <div class="flash-sale-clock">
+            <div class="flash-sale-time">
+              <span id="flashHours">00</span>
+              <small>GIỜ</small>
+            </div>
+            <b>:</b>
+            <div class="flash-sale-time">
+              <span id="flashMinutes">00</span>
+              <small>PHÚT</small>
+            </div>
+            <b>:</b>
+            <div class="flash-sale-time">
+              <span id="flashSeconds">00</span>
+              <small>GIÂY</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="flash-sale-action">
+          <p class="flash-sale-slogan">Sản phẩm thiên nhiên<br /></p>
+
+          <a href="products.html" class="flash-sale-button" id="flashSaleButton">
+            MUA NGAY<span>→</span>
+          </a>
+        </div>
+
+        <p class="flash-sale-message" id="flashSaleMessage">TH TRUE MILK THẬT SỰ THIÊN NHIÊN</p>
+
+        <div class="flash-sale-wave"></div>
+        <span class="flash-sale-deco flash-sale-deco-one">✦</span>
+        <span class="flash-sale-deco flash-sale-deco-two">✦</span>
+      </div>
+    </section>
+
+    <!-- THANH DANH MỤC ICON TRẮNG ĐEN (XÂY DỰNG CHUẨN THEO ẢNH 1) -->
+    <div class="category-slider-container">
+      <button class="slider-nav-btn prev" onclick="scrollCategories(-1)">❮</button>
+      <div id="categoryIconsScroll" class="category-icons-scroll">
+        <!-- JS render danh mục dạng icon outline chuẩn ảnh 1 -->
+      </div>
+      <button class="slider-nav-btn next" onclick="scrollCategories(1)">❯</button>
+    </div>
+
+    <!-- KHỐI SẢN PHẨM NỔI BẬT (CHUẨN THEO ẢNH 2) -->
+    <main class="container" id="san-pham-noi-bat">
+      <h2 class="main-section-title">Sản phẩm nổi bật</h2>
+      <div class="product-grid" id="featured-products-container">
+        <!-- Render 5 sản phẩm nổi bật từ JS -->
+      </div>
+    </main>
+
+    <!-- KHỐI BANNER CHUYỂN ĐỘNG / TRUYỀN THÔNG PHỤ (CHUẨN THEO ẢNH 3) -->
+
+    <section class="middle-banner-section" id="tai-che">
+      <div class="middle-banner-container">
+        <a
+          href="https://thmilk.vn/thong-tin-chi-tiet-ve-chuong-trinh-thu-gom-vo-hop-lan-toa-song-xanh-2026/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Tìm hiểu chương trình thu gom vỏ hộp của TH true MILK"
+        >
+          <img
+            src="images/banners/banner_songxanh.jpg"
+            alt="Thu gom vỏ hộp, lan tỏa sống xanh 2026 - TH true MILK"
+          />
+        </a>
+      </div>
+    </section>
+
+    <!-- KHỐI TH TRUE MART (CHUẨN THEO ẢNH 4) -->
+    <section class="th-truemart-section" id="th-true-mart">
+      <div class="truemart-container-inner">
+        <div class="truemart-content">
+          <h2>TH true mart</h2>
+          <p>
+            TH true mart là chuỗi cửa hàng phân phối hiện đại, chuyên cung cấp trực tiếp các sản
+            phẩm thực phẩm sạch, an toàn, tươi ngon và bổ dưỡng, đạt chuẩn Quốc tế tới tận tay người
+            tiêu dùng.
+          </p>
+          <div class="truemart-buttons">
+            <a href="#" class="btn-truemart-store">Tìm cửa hàng <i class="fa fa-search"></i></a>
+            <a href="products.html" class="btn-truemart-online"
+              >Mua hàng trực tuyến <i class="fa fa-shopping-bag"></i
+            ></a>
+          </div>
+        </div>
+        <div class="truemart-image">
+          <img src="images/banners/banner_truemart.png" alt="Cửa hàng TH true mart" />
+        </div>
+      </div>
+    </section>
+
+    <!-- KHỐI GÓC SỨC KHỎE -->
+    <section class="health-corner-section" id="goc-suc-khoe">
+      <div class="health-container-inner">
+        <div class="health-header">
+          <h2 class="health-title">Góc sức khỏe</h2>
+          <div class="health-divider"></div>
+        </div>
+
+        <div class="health-grid">
+          <div class="health-card">
+            <a
+              href="https://thmilk.vn/healths/thong-tin-tu-van-su-dung-sua/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div class="health-img-box">
+                <img src="images/banners/health_1.jpg" alt="Tư vấn sử dụng sữa" />
+              </div>
+              <p class="health-card-title">Thông tin tư vấn sử dụng sữa</p>
+            </a>
+          </div>
+          <div class="health-card">
+            <div class="health-img-box">
+              <img
+                src="images/banners/health_2.jpg"
+                alt="Khỏe đẹp tự nhiên"
+                onerror="this.src = 'images/banners/health_2.jpg'"
+              />
+            </div>
+            <p class="health-card-title">Bí quyết khoẻ đẹp tự nhiên</p>
+          </div>
+
+          <div class="health-card">
+            <div class="health-img-box">
+              <img
+                src="images/banners/health_3.jpg"
+                alt="Chăm sóc con cái"
+                onerror="this.src = 'images/banners/health_3.jpg'"
+              />
+            </div>
+            <p class="health-card-title">Bí quyết chăm sóc con cái</p>
+          </div>
+
+          <div class="health-card">
+            <div class="health-img-box">
+              <img
+                src="images/banners/health_4.jpg"
+                alt="Phong cách sống xanh"
+                onerror="this.src = 'images/banners/health_4.jpg'"
+              />
+            </div>
+            <p class="health-card-title">Phong cách sống xanh</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="media-section">
+      <div class="media-container-inner">
+        <!-- Tiêu đề có đường gạch ngang mỏng kéo dài sang phải -->
+        <div class="section-header-line">
+          <h2 class="section-title-blue">Truyền thông</h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="media-layout">
+          <!-- Bài viết chính bên trái (Ảnh lớn + Tiêu đề hoa + Ngày tháng) -->
+          <div class="media-main-article">
+            <div class="media-main-img">
+              <img
+                src="images/banners/media_main.jpg"
+                alt="Đại hội thi đua"
+                onerror="this.src = 'images/banners/logo.png'"
+              />
+            </div>
+            <h3>
+              ĐẠI HỘI THI ĐƯA YÊU NƯỚC TOÀN QUỐC LẦN THỨ XI: TÔN VINH TẬP ĐOÀN TH MANG PHẨM HẠNH ANH
+              HÙNG CỦA MỘT DÂN TỘC ANH HÙNG
+            </h3>
+            <span class="media-date">Tháng Mười Hai 29, 2025</span>
+          </div>
+
+          <!-- Danh sách tin bên phải -->
+          <div class="media-sidebar-list">
+            <div class="media-sub-item">
+              <h4>
+                TẬP ĐOÀN TH RA MẮT BỘ SẢN PHẨM BỮA ĂN TIỆN LỢI TH TRUE FOOD – BỮA ĂN TIỆN LỢI, CHUẨN
+                VỊ NHÀ LÀM
+              </h4>
+              <span class="media-date">Tháng Mười Hai 10, 2025</span>
+            </div>
+            <div class="media-sub-item">
+              <h4>TH REWARDS – RA MẮT CHƯƠNG TRÌNH KHÁCH HÀNG THÂN THIẾT</h4>
+              <span class="media-date">Tháng Mười Hai 22, 2025</span>
+            </div>
+            <div class="media-sub-item">
+              <h4>
+                TẬP ĐOÀN TH RA MẮT SẢN PHẨM SỮA TƯƠI TIỆT TRÙNG HƯƠNG CHUỐI TỰ NHIÊN TH TRUE MILK
+              </h4>
+              <span class="media-date">Tháng Tám 12, 2025</span>
+            </div>
+            <div class="media-btn-box">
+              <a
+                href="https://thmilk.vn/truyen-thong/"
+                class="btn-view-more"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Xem thêm
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer hệ thống -->
+    <footer class="site-footer">
+      <div class="footer-container-inner">
+        <div class="footer-top-grid">
+          <!-- Cột 1: Logo TH -->
+          <div class="footer-col footer-logo-col">
+            <img src="images/banners/logo.png" alt="TH true MILK" />
+          </div>
+
+          <!-- Cột 2: Liên hệ -->
+          <div class="footer-col">
+            <ul class="footer-links">
+              <li><a href="#">Liên hệ</a></li>
+              <li><a href="#">Chăm sóc khách hàng</a></li>
+            </ul>
+          </div>
+
+          <!-- Cột 3: Dịch vụ & Chính sách -->
+          <div class="footer-col">
+            <ul class="footer-links">
+              <li><a href="#">Dịch vụ giao hàng tận nhà</a></li>
+              <li><a href="#">Chính sách & Quy định chung</a></li>
+              <li><a href="#">Chính sách bảo mật</a></li>
+            </ul>
+          </div>
+
+          <!-- Cột 4: Tải Ứng Dụng -->
+          <div class="footer-col footer-app-col">
+            <div class="app-title">Tải Ứng Dụng</div>
+            <div class="app-badges">
+              <a href="#"><img src="images/banners/appstore.svg" alt="App Store" /></a>
+              <a href="#"><img src="images/banners/googleplay.svg" alt="Google Play" /></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hàng Icon Mạng Xã Hội -->
+        <div class="footer-socials">
+          <a href="#"><img src="images/banners/fb.svg" alt="FB" /></a>
+          <a href="#"><img src="images/banners/ig.svg" alt="IG" /></a>
+          <a href="#"><img src="images/banners/ytb.svg" alt="YTB" /></a>
+        </div>
+
+        <!-- Thông tin bản quyền & Trụ sở -->
+        <div class="footer-bottom-info">
+          <p>Cơ quan chủ quản: Công ty Cổ phần Chuỗi Thực phẩm TH</p>
+          <p>
+            Trụ sở: Số 166 đường Nguyễn Thái Học, Phường Quang Trung, Thành phố Vinh, Tỉnh Nghệ An,
+            Việt Nam - Điện thoại: 1800545440
+          </p>
+          <p>
+            MST: 2901270911 - Số ĐKKD: 2901270911 cấp ngày 06/09/2010 bởi Sở KH và ĐT tỉnh Nghệ An
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="js/data.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/site-motion.js"></script>
+
+    <script>
+      function toggleSearchBar() {
+        const toggleBtn = document.getElementById("searchToggleBtn");
+        const searchForm = document.getElementById("searchExpandForm");
+        const searchInput = document.getElementById("searchExpandInput");
+
+        if (!toggleBtn || !searchForm) return;
+
+        const isOpen = searchForm.classList.toggle("active");
+        toggleBtn.style.display = isOpen ? "none" : "flex";
+
+        if (isOpen && searchInput) {
+          searchInput.focus();
+        }
+      }
+
+      // Chọn quốc gia
+      const langSelectorBtn = document.getElementById("langSelectorBtn");
+      const langDropdown = document.getElementById("langDropdown");
+      const selectedFlag = document.getElementById("selectedFlag");
+      const selectedLang = document.getElementById("selectedLang");
+
+      if (langSelectorBtn && langDropdown && selectedFlag && selectedLang) {
+        langSelectorBtn.addEventListener("click", (event) => {
+          event.stopPropagation();
+
+          const isOpen = langDropdown.classList.toggle("show");
+          langSelectorBtn.setAttribute("aria-expanded", String(isOpen));
+        });
+
+        langDropdown.querySelectorAll("button[data-code]").forEach((button) => {
+          button.addEventListener("click", () => {
+            const code = button.dataset.code;
+            const flag = button.dataset.flag;
+
+            selectedFlag.src = `https://flagcdn.com/w40/${flag}.png`;
+            selectedFlag.alt = code;
+            selectedLang.textContent = code;
+
+            localStorage.setItem("selectedLanguage", code);
+
+            langDropdown.classList.remove("show");
+            langSelectorBtn.setAttribute("aria-expanded", "false");
+          });
+        });
+
+        // Khôi phục quốc gia đã chọn
+        const savedLanguage = localStorage.getItem("selectedLanguage");
+
+        if (savedLanguage) {
+          const savedButton = langDropdown.querySelector(`button[data-code="${savedLanguage}"]`);
+
+          if (savedButton) {
+            selectedFlag.src = `https://flagcdn.com/w40/${savedButton.dataset.flag}.png`;
+            selectedFlag.alt = savedButton.dataset.code;
+            selectedLang.textContent = savedButton.dataset.code;
+          }
+        }
+
+        // Đóng danh sách khi bấm bên ngoài
+        document.addEventListener("click", (event) => {
+          if (!event.target.closest(".lang-selector")) {
+            langDropdown.classList.remove("show");
+            langSelectorBtn.setAttribute("aria-expanded", "false");
+          }
+        });
+      }
+
+      // Render sản phẩm nổi bật
+      document.addEventListener("DOMContentLoaded", () => {
+        const container = document.getElementById("featured-products-container");
+
+        if (!container || typeof products === "undefined") return;
+
+        container.innerHTML = products
+          .slice(0, 5)
+          .map((p) => {
+            const badge = p.isNew ? '<div class="badge-new">Mới</div>' : "";
+
+            return `
+          <div class="product-card" onclick="goToDetail(${p.id})">
+            ${badge}
+            <div class="product-img-box">
+              <img src="${p.image}" alt="${p.name}"
+                onerror="this.src='images/banners/logo.png'">
+            </div>
+            <h3>${p.name}</h3>
+          </div>
+        `;
+          })
+          .join("");
+      });
+
+      /* ===== FLASH SALE COUNTDOWN ===== */
+      function startFlashSaleCountdown() {
+        const hoursEl = document.getElementById("flashHours");
+        const minutesEl = document.getElementById("flashMinutes");
+        const secondsEl = document.getElementById("flashSeconds");
+        const messageEl = document.getElementById("flashSaleMessage");
+        const buttonEl = document.getElementById("flashSaleButton");
+
+        if (!hoursEl || !minutesEl || !secondsEl || !messageEl || !buttonEl) {
+          return;
+        }
+
+        // Thời điểm kết thúc: 23:59 hôm nay theo giờ máy người dùng
+        const now = new Date();
+        const endTime = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 0, 0);
+
+        function updateCountdown() {
+          const currentTime = new Date();
+          const remaining = Math.max(0, endTime.getTime() - currentTime.getTime());
+
+          const totalSeconds = Math.floor(remaining / 1000);
+          const hours = Math.floor(totalSeconds / 3600);
+          const minutes = Math.floor((totalSeconds % 3600) / 60);
+          const seconds = totalSeconds % 60;
+
+          hoursEl.textContent = String(hours).padStart(2, "0");
+          minutesEl.textContent = String(minutes).padStart(2, "0");
+          secondsEl.textContent = String(seconds).padStart(2, "0");
+
+          if (remaining <= 0) {
+            messageEl.textContent = "Flash Sale hôm nay đã kết thúc!";
+            buttonEl.textContent = "ĐÃ KẾT THÚC";
+            buttonEl.classList.add("disabled");
+            buttonEl.removeAttribute("href");
+            clearInterval(countdownInterval);
+          }
+        }
+
+        updateCountdown();
+
+        const countdownInterval = setInterval(updateCountdown, 1000);
+      }
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", startFlashSaleCountdown);
+      } else {
+        startFlashSaleCountdown();
+      }
+    </script>
+  </body>
+</html>

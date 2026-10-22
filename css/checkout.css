@@ -1,0 +1,276 @@
+/* ==========================================================================
+   FILE: css/checkout.css
+   MÔ TẢ: Style riêng cho trang thanh toán (checkout.html), bao gồm bố cục chia 2 cột 
+          (thông tin giao hàng và tóm tắt đơn hàng), định dạng form, danh sách sản phẩm 
+          trong đơn, nút xác nhận, thanh tìm kiếm và menu tài khoản dropdown.
+   ========================================================================== */
+
+/* 1. KHUNG GIAO DIỆN CHÍNH TRANG THANH TOÁN */
+.checkout-page-container {
+  max-width: 1100px;
+  margin: 30px auto;
+  padding: 0 15px;
+  font-family: Arial, sans-serif;
+}
+
+.checkout-title {
+  color: #0088cc; /* Màu xanh thương hiệu */
+  font-size: 24px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #0088cc;
+}
+
+/* Bố cục lưới 2 cột: Cột trái (Nhập thông tin), Cột phải (Tóm tắt đơn hàng) */
+.checkout-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+/* Responsive cho màn hình máy tính bảng và điện thoại */
+@media (max-width: 768px) {
+  .checkout-grid {
+    grid-template-columns: 1fr; /* Thu gọn thành 1 cột dọc trên màn hình nhỏ */
+  }
+}
+
+/* Khung hộp chứa (Box container) */
+.checkout-box {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 25px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  border: 1px solid #eef2f5;
+}
+
+.checkout-box h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #333333;
+  font-size: 18px;
+  border-bottom: 1px solid #eeeeee;
+  padding-bottom: 10px;
+}
+
+/* 2. ĐỊNH DẠNG FORM NHẬP THÔNG TIN GIAO HÀNG */
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #444444;
+  font-size: 14px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  font-size: 14px;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease;
+}
+
+.form-control:focus {
+  border-color: #0088cc;
+  outline: none;
+}
+
+textarea.form-control {
+  resize: vertical; /* Cho phép co giãn chiều dọc đối với ô ghi chú */
+}
+
+/* 3. DANH SÁCH SẢN PHẨM TRONG ĐƠN HÀNG */
+.order-items-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.order-item-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px dashed #e0e0e0;
+}
+
+.order-item-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.order-item-img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border: 1px solid #f0f0f0;
+  border-radius: 4px;
+}
+
+.order-item-name {
+  font-size: 14px;
+  color: #333333;
+  font-weight: bold;
+}
+
+.order-item-qty {
+  font-size: 13px;
+  color: #777777;
+}
+
+.order-item-price {
+  font-weight: bold;
+  color: #333333;
+  font-size: 14px;
+}
+
+/* 4. KHUNG TỔNG KẾT TIỀN THANH TOÁN */
+.summary-total-box {
+  background: #f8fbfe;
+  padding: 15px;
+  border-radius: 6px;
+  margin-top: 15px;
+  border: 1px solid #e1f0fa;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #555555;
+}
+
+.summary-row.final-total {
+  margin-bottom: 0;
+  padding-top: 8px;
+  border-top: 1px solid #dcdcdc;
+  font-size: 18px;
+  font-weight: bold;
+  color: #0088cc;
+}
+
+/* Nút xác nhận đặt hàng */
+.btn-confirm-order {
+  width: 100%;
+  background-color: #28a745; /* Màu xanh lá thành công */
+  color: #ffffff;
+  padding: 14px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.2s ease;
+}
+
+.btn-confirm-order:hover {
+  background-color: #218838;
+}
+
+/* 5. THANH TÌM KIẾM TRÊN HEADER */
+.header-search-form {
+  display: flex;
+  align-items: center;
+  position: relative;
+  border-bottom: 1px solid #cccccc;
+  padding: 2px 5px;
+  width: 220px;
+}
+
+.header-search-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  color: #333333;
+  padding-right: 25px;
+}
+
+.header-search-input::placeholder {
+  color: #999999;
+  font-weight: 300;
+}
+
+.header-search-btn {
+  position: absolute;
+  right: 5px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #666666;
+  font-size: 15px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.header-search-btn:hover {
+  color: #0088cc;
+}
+
+/* 6. ICON TÀI KHOẢN VÀ MENU DROPDOWN (ĐĂNG NHẬP / ĐĂNG KÝ) */
+.account-dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.account-icon-link {
+  color: #005691;
+  font-size: 16px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s ease;
+}
+
+.account-icon-link:hover {
+  color: #0088cc;
+}
+
+.account-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #ffffff;
+  min-width: 140px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
+  padding: 6px 0;
+  z-index: 999;
+  border: 1px solid #eef2f5;
+}
+
+.account-dropdown:hover .account-menu {
+  display: block;
+}
+
+.account-menu a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  color: #333333;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.account-menu a:hover {
+  background-color: #f0f8ff;
+  color: #0088cc;
+}

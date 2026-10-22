@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thanh toán - TH true MILK</title>
+
+    <!-- Thư viện Icon FontAwesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- CSS Dùng chung hệ thống (Header, Footer, Nav) -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- CSS Riêng cho trang Thanh toán -->
+    <link rel="stylesheet" href="css/checkout.css" />
+  </head>
+  <body>
+    <!-- Header hệ thống dùng chung -->
+    <header>
+      <div class="nav-container">
+        <div class="logo">
+          <a href="index.html">
+            <img src="images/banners/logo.png" alt="TH true MILK" />
+          </a>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="products.html" class="active">SẢN PHẨM</a></li>
+            <li><a href="#">KHUYẾN MÃI</a></li>
+            <li><a href="#">CỬA HÀNG</a></li>
+            <li><a href="#">TRUYỀN THÔNG</a></li>
+            <li><a href="#">CHUYÊN GIA DINH DƯỠNG</a></li>
+            <li><a href="#">TUYỂN DỤNG</a></li>
+          </ul>
+        </nav>
+        <div class="header-right-tools">
+          <div class="search-tool-wrapper">
+            <!-- Icon Kính lúp bấm để mở/đóng ô tìm kiếm -->
+            <button
+              type="button"
+              class="btn-search-toggle"
+              id="searchToggleBtn"
+              onclick="toggleSearchBar()"
+              title="Tìm kiếm"
+            >
+              <i class="fa fa-search"></i>
+            </button>
+
+            <!-- Ô tìm kiếm bo tròn sẽ hiện ra khi bấm vào icon -->
+            <form
+              class="search-expand-form"
+              id="searchExpandForm"
+              action="search.html"
+              method="GET"
+            >
+              <input
+                type="text"
+                name="q"
+                id="searchExpandInput"
+                class="search-expand-input"
+                placeholder="Nhập tên sản phẩm..."
+                required
+              />
+              <button type="submit" class="search-expand-btn" title="Tìm kiếm">
+                <i class="fa fa-search"></i>
+              </button>
+            </form>
+          </div>
+
+          <div class="lang-selector">
+            <img src="https://flagcdn.com/w20/vn.png" alt="VN" /> VN
+            <i class="fa fa-caret-down"></i>
+          </div>
+
+          <!-- Khối Icon Tài Khoản mới thêm (Rê chuột hiện Đăng nhập / Đăng ký) -->
+          <div class="account-dropdown">
+            <a href="login.html" class="account-icon-link" title="Tài khoản">
+              <i class="fa fa-user"></i>
+            </a>
+            <div class="account-menu">
+              <a href="login.html"><i class="fa fa-sign-in"></i> Đăng nhập</a>
+              <a href="register.html"><i class="fa fa-user-plus"></i> Đăng ký</a>
+            </div>
+          </div>
+
+          <a href="cart.html" class="cart-icon-link">
+            <i class="fa fa-shopping-cart"></i>
+            <span id="cart-count-badge">0</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Khung chính trang thanh toán -->
+    <main class="checkout-page-container">
+      <h1 class="checkout-title">Thanh toán đơn hàng</h1>
+
+      <form id="checkout-form" onsubmit="handleOrderSubmit(event)">
+        <div class="checkout-grid">
+          <!-- Cột trái: Thông tin nhận hàng -->
+          <div class="checkout-box">
+            <h3>Thông tin nhận hàng</h3>
+            <div class="form-group">
+              <label for="fullname">Họ và tên *</label>
+              <input
+                type="text"
+                id="fullname"
+                class="form-control"
+                placeholder="Nhập đầy đủ họ và tên"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Số điện thoại *</label>
+              <input
+                type="tel"
+                id="phone"
+                class="form-control"
+                placeholder="Nhập số điện thoại liên hệ"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Địa chỉ Email</label>
+              <input
+                type="email"
+                id="email"
+                class="form-control"
+                placeholder="Nhập email (không bắt buộc)"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="address">Địa chỉ nhận hàng *</label>
+              <textarea
+                id="address"
+                class="form-control"
+                rows="3"
+                placeholder="Số nhà, tên đường, phường/xã, quận/huyện, tỉnh/thành phố"
+                required
+              ></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="note">Ghi chú giao hàng</label>
+              <textarea
+                id="note"
+                class="form-control"
+                rows="2"
+                placeholder="Ghi chú thêm (ví dụ: giao giờ hành chính, gọi trước khi giao)"
+              ></textarea>
+            </div>
+          </div>
+
+          <!-- Cột phải: Đơn hàng của bạn -->
+          <div class="checkout-box">
+            <h3>Đơn hàng của bạn</h3>
+            <div id="checkout-order-items">
+              <!-- Danh sách sản phẩm render bằng JS -->
+            </div>
+
+            <div class="summary-total-box" id="checkout-summary-box">
+              <!-- Tóm tắt chi phí render bằng JS -->
+            </div>
+
+            <button type="submit" class="btn-confirm-order">XÁC NHẬN ĐẶT HÀNG</button>
+          </div>
+        </div>
+      </form>
+    </main>
+
+    <!-- Footer hệ thống dùng chung -->
+    <footer class="site-footer">
+      <div class="footer-container-inner">
+        <div class="footer-top-grid">
+          <div class="footer-col footer-logo-col">
+            <img src="images/banners/logo.png" alt="TH true MILK" />
+          </div>
+
+          <div class="footer-col">
+            <ul class="footer-links">
+              <li><a href="#">Liên hệ</a></li>
+              <li><a href="#">Chăm sóc khách hàng</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <ul class="footer-links">
+              <li><a href="#">Dịch vụ giao hàng tận nhà</a></li>
+              <li><a href="#">Chính sách & Quy định chung</a></li>
+              <li><a href="#">Chính sách bảo mật</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col footer-app-col">
+            <div class="app-title">Tải Ứng Dụng</div>
+            <div class="app-badges">
+              <a href="#"><img src="images/banners/appstore.svg" alt="App Store" /></a>
+              <a href="#"><img src="images/banners/googleplay.svg" alt="Google Play" /></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-socials">
+          <a href="#"><img src="images/banners/fb.svg" alt="FB" /></a>
+          <a href="#"><img src="images/banners/ig.svg" alt="IG" /></a>
+          <a href="#"><img src="images/banners/ytb.svg" alt="YTB" /></a>
+        </div>
+
+        <div class="footer-bottom-info">
+          <p>Cơ quan chủ quản: Công ty Cổ phần Chuỗi Thực phẩm TH</p>
+          <p>
+            Trụ sở: Số 166 đường Nguyễn Thái Học, Phường Quang Trung, Thành phố Vinh, Tỉnh Nghệ An,
+            Việt Nam - Điện thoại: 1800545440
+          </p>
+          <p>
+            MST: 2901270911 - Số ĐKKD: 2901270911 cấp ngày 06/09/2010 bởi Sở KH và ĐT tỉnh Nghệ An
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JS Dữ liệu & JS xử lý Thanh toán -->
+    <script src="js/data.js"></script>
+    <script src="js/checkout.js"></script>
+    <script src="effects.js"></script>
+  </body>
+</html>

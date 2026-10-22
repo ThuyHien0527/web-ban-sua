@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Giỏ hàng - TH true MILK</title>
+
+    <!-- Thư viện Icon FontAwesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- CSS Hệ thống & CSS riêng cho trang giỏ hàng -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/cart.css" />
+  </head>
+  <body>
+    <!-- Header hệ thống -->
+    <header>
+      <div class="nav-container">
+        <div class="logo">
+          <a href="index.html">
+            <img src="images/banners/logo.png" alt="TH true MILK" />
+          </a>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="products.html" class="active">SẢN PHẨM</a></li>
+            <li><a href="#">KHUYẾN MÃI</a></li>
+            <li><a href="#">CỬA HÀNG</a></li>
+            <li><a href="#">TRUYỀN THÔNG</a></li>
+            <li><a href="#">CHUYÊN GIA DINH DƯỠNG</a></li>
+            <li><a href="#">TUYỂN DỤNG</a></li>
+          </ul>
+        </nav>
+        <div class="header-right-tools">
+          <div class="search-tool-wrapper">
+            <!-- Icon Kính lúp bấm để mở/đóng ô tìm kiếm -->
+            <button
+              type="button"
+              class="btn-search-toggle"
+              id="searchToggleBtn"
+              onclick="toggleSearchBar()"
+              title="Tìm kiếm"
+            >
+              <i class="fa fa-search"></i>
+            </button>
+
+            <!-- Ô tìm kiếm bo tròn sẽ hiện ra khi bấm vào icon -->
+            <form
+              class="search-expand-form"
+              id="searchExpandForm"
+              action="search.html"
+              method="GET"
+            >
+              <input
+                type="text"
+                name="q"
+                id="searchExpandInput"
+                class="search-expand-input"
+                placeholder="Nhập tên sản phẩm..."
+                required
+              />
+              <button type="submit" class="search-expand-btn" title="Tìm kiếm">
+                <i class="fa fa-search"></i>
+              </button>
+            </form>
+          </div>
+
+          <div class="lang-selector">
+            <img src="https://flagcdn.com/w20/vn.png" alt="VN" /> VN
+            <i class="fa fa-caret-down"></i>
+          </div>
+
+          <!-- Khối Icon Tài Khoản mới thêm (Rê chuột hiện Đăng nhập / Đăng ký) -->
+          <div class="account-dropdown">
+            <a href="login.html" class="account-icon-link" title="Tài khoản">
+              <i class="fa fa-user"></i>
+            </a>
+            <div class="account-menu">
+              <a href="login.html"><i class="fa fa-sign-in"></i> Đăng nhập</a>
+              <a href="register.html"><i class="fa fa-user-plus"></i> Đăng ký</a>
+            </div>
+          </div>
+
+          <a href="cart.html" class="cart-icon-link">
+            <i class="fa fa-shopping-cart"></i>
+            <span id="cart-count-badge">0</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Khung chính trang giỏ hàng -->
+    <main class="container cart-page-main">
+      <h2 class="cart-title">GIỎ HÀNG CỦA BẠN</h2>
+
+      <div class="cart-wrapper">
+        <!-- Bảng danh sách sản phẩm -->
+        <table class="cart-table">
+          <thead>
+            <tr>
+              <th>Sản phẩm</th>
+              <th>Đơn giá</th>
+              <th>Số lượng</th>
+              <th>Thành tiền</th>
+              <th>Thao tác</th>
+            </tr>
+          </thead>
+          <tbody id="cart-items-container">
+            <!-- Đổ dữ liệu giỏ hàng tự động từ JS -->
+          </tbody>
+        </table>
+
+        <!-- Khung tổng tiền & Thanh toán -->
+        <div class="cart-summary">
+          <h3>Tổng đơn hàng</h3>
+          <div class="summary-row">
+            <span>Tạm tính:</span>
+            <strong id="cart-total-price">0 đ</strong>
+          </div>
+          <div class="summary-row">
+            <span>Phí vận chuyển:</span>
+            <span>Miễn phí</span>
+          </div>
+          <hr />
+          <div class="summary-row total-row">
+            <span>Tổng tiền:</span>
+            <strong id="cart-final-price" class="price-highlight">0 đ</strong>
+          </div>
+          <button type="button" class="btn-checkout" onclick="processCheckout()">
+            Tiến hành thanh toán
+          </button>
+          <a href="products.html" class="btn-continue">❮ Tiếp tục mua hàng</a>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer hệ thống -->
+    <footer class="site-footer">
+      <div class="footer-container-inner">
+        <div class="footer-top-grid">
+          <!-- Cột 1: Logo TH -->
+          <div class="footer-col footer-logo-col">
+            <img src="images/banners/logo.png" alt="TH true MILK" />
+          </div>
+
+          <!-- Cột 2: Liên hệ -->
+          <div class="footer-col">
+            <ul class="footer-links">
+              <li><a href="#">Liên hệ</a></li>
+              <li><a href="#">Chăm sóc khách hàng</a></li>
+            </ul>
+          </div>
+
+          <!-- Cột 3: Dịch vụ & Chính sách -->
+          <div class="footer-col">
+            <ul class="footer-links">
+              <li><a href="#">Dịch vụ giao hàng tận nhà</a></li>
+              <li><a href="#">Chính sách & Quy định chung</a></li>
+              <li><a href="#">Chính sách bảo mật</a></li>
+            </ul>
+          </div>
+
+          <!-- Cột 4: Tải Ứng Dụng -->
+          <div class="footer-col footer-app-col">
+            <div class="app-title">Tải Ứng Dụng</div>
+            <div class="app-badges">
+              <a href="#"><img src="images/banners/appstore.svg" alt="App Store" /></a>
+              <a href="#"><img src="images/banners/googleplay.svg" alt="Google Play" /></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hàng Icon Mạng Xã Hội -->
+        <div class="footer-socials">
+          <a href="#"><img src="images/banners/fb.svg" alt="FB" /></a>
+          <a href="#"><img src="images/banners/ig.svg" alt="IG" /></a>
+          <a href="#"><img src="images/banners/ytb.svg" alt="YTB" /></a>
+        </div>
+
+        <!-- Thông tin bản quyền & Trụ sở -->
+        <div class="footer-bottom-info">
+          <p>Cơ quan chủ quản: Công ty Cổ phần Chuỗi Thực phẩm TH</p>
+          <p>
+            Trụ sở: Số 166 đường Nguyễn Thái Học, Phường Quang Trung, Thành phố Vinh, Tỉnh Nghệ An,
+            Việt Nam - Điện thoại: 1800545440
+          </p>
+          <p>
+            MST: 2901270911 - Số ĐKKD: 2901270911 cấp ngày 06/09/2010 bởi Sở KH và ĐT tỉnh Nghệ An
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JS Dữ liệu & JS xử lý Giỏ hàng -->
+    <script src="js/data.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="effects.js"></script>
+  </body>
+</html>

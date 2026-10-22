@@ -1,0 +1,3179 @@
+/* ==========================================================================
+
+   FILE: css/style.css
+
+   MÔ TẢ: CSS Chuẩn 100% theo giao diện thực tế website TH true MILK (thmilk.vn),
+
+          bao gồm định dạng chung, header, thanh trượt banner, thanh danh mục, 
+
+          lưới sản phẩm, góc sức khỏe, khối truyền thông và hiệu ứng tương tác.
+
+   ========================================================================== */
+
+* {
+  margin: 0;
+
+  padding: 0;
+
+  box-sizing: border-box;
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #ffffff;
+
+  color: #333333;
+}
+
+/* 1. HEADER CHUẨN TH MILK */
+
+header {
+  background-color: #ffffff;
+
+  border-bottom: 1px solid #eaeaea;
+
+  position: sticky;
+
+  top: 0;
+
+  z-index: 1000;
+
+  padding: 10px 0;
+}
+
+.nav-container {
+  max-width: 1320px;
+
+  margin: 0 auto;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 0 20px;
+}
+
+.logo img {
+  height: 48px;
+
+  object-fit: contain;
+}
+
+nav ul {
+  list-style: none;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 22px;
+}
+
+nav ul li a {
+  text-decoration: none;
+
+  color: #555555;
+
+  font-weight: 600;
+
+  font-size: 12.5px;
+
+  letter-spacing: 0.5px;
+
+  transition: color 0.2s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: #004b87;
+}
+
+/* ==========================================================================
+
+   STYLE KHU VỰC CÔNG CỤ HEADER (KÍNH LÚP - NGÔN NGỮ - GIỎ HÀNG)
+
+   ========================================================================== */
+
+.header-right-tools {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+}
+
+.btn-search {
+  background: transparent !important;
+
+  border: none !important;
+
+  outline: none !important;
+
+  padding: 0 !important;
+
+  margin: 0 !important;
+
+  color: #333333;
+
+  font-size: 16px;
+
+  cursor: pointer;
+
+  text-decoration: none;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.btn-search:hover {
+  color: #0088cc;
+
+  transform: scale(1.1);
+}
+
+/* Biểu tượng kính lúp tìm kiếm */
+
+.search-icon-btn {
+  background: transparent;
+
+  border: none;
+
+  outline: none;
+
+  padding: 0;
+
+  margin: 0;
+
+  color: #333333;
+
+  font-size: 18px;
+
+  cursor: pointer;
+
+  text-decoration: none;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.search-tool-wrapper {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+}
+
+.btn-search-toggle {
+  background: transparent !important;
+
+  border: none !important;
+
+  outline: none !important;
+
+  padding: 0 !important;
+
+  color: #333333;
+
+  font-size: 16px;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+}
+
+.btn-search-toggle:hover {
+  color: #0088cc;
+}
+
+.search-expand-form {
+  display: none; /* Mặc định ẩn */
+
+  align-items: center;
+
+  border: 1px solid #dcdcdc;
+
+  border-radius: 20px;
+
+  padding: 3px 10px;
+
+  background-color: #ffffff;
+}
+
+.search-expand-form.active {
+  display: flex !important; /* Hiện ra khi bấm vào nút */
+}
+
+.search-expand-input {
+  border: none;
+
+  outline: none;
+
+  font-size: 13px;
+
+  width: 140px;
+
+  background: transparent;
+}
+
+.search-expand-btn {
+  background: transparent;
+
+  border: none;
+
+  cursor: pointer;
+
+  color: #666;
+
+  padding: 0;
+}
+
+.search-expand-btn:hover {
+  color: #0088cc;
+}
+
+.search-icon-btn:hover {
+  color: #0088cc;
+
+  transform: scale(1.1);
+}
+
+/* Nút chọn ngôn ngữ */
+.lang-selector {
+  position: relative;
+}
+
+.lang-selector img {
+  width: 20px;
+
+  height: auto;
+}
+
+.lang-flag {
+  width: 22px;
+
+  height: 15px;
+
+  object-fit: cover;
+
+  border-radius: 2px;
+}
+
+.lang-arrow {
+  font-size: 10px;
+
+  color: #666666;
+}
+
+/* Biểu tượng Giỏ hàng + Badge đỏ */
+
+.cart-icon-link {
+  position: relative;
+
+  color: #005691;
+
+  font-size: 18px;
+
+  text-decoration: none;
+
+  display: inline-flex;
+
+  align-items: center;
+}
+
+.cart-icon-link:hover {
+  color: #0088cc;
+}
+
+#cart-count-badge {
+  position: absolute;
+
+  top: -8px;
+
+  right: -10px;
+
+  background-color: #d93025;
+
+  color: #ffffff;
+
+  font-size: 11px;
+
+  font-weight: bold;
+
+  height: 18px;
+
+  min-width: 18px;
+
+  line-height: 18px;
+
+  border-radius: 50%;
+
+  text-align: center;
+
+  padding: 0 4px;
+
+  box-sizing: border-box;
+}
+
+/* 2. BANNER SLIDER TOÀN TRANG */
+
+.banner-section {
+  position: relative;
+
+  width: 100%;
+
+  overflow: hidden;
+}
+
+#sliderImageContainer img {
+  width: 100%;
+
+  height: auto;
+
+  max-height: 520px;
+
+  object-fit: cover;
+
+  display: block;
+
+  overflow: hidden;
+
+  transition:
+    opacity 0.35s ease,
+    transform 0.2s ease;
+}
+
+#sliderImageContainer img.is-changing {
+  opacity: 0.35;
+
+  transform: scale(1.015);
+}
+
+.banner-arrow {
+  position: absolute;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  background: rgba(255, 255, 255, 0.3);
+
+  color: white;
+
+  border: none;
+
+  font-size: 24px;
+
+  padding: 15px 12px;
+
+  cursor: pointer;
+
+  transition: background 0.3s;
+}
+
+.banner-arrow:hover {
+  background: rgba(0, 75, 135, 0.7);
+}
+
+.prev-arrow {
+  left: 10px;
+}
+
+.next-arrow {
+  right: 10px;
+}
+
+/* 3. THANH ICON DANH MỤC TRẮNG ĐEN & HIỆU ỨNG GRAYSCALE */
+
+.category-slider-container {
+  position: relative;
+
+  width: 100%;
+
+  max-width: 1280px;
+
+  margin: 30px auto;
+
+  padding: 10px 50px;
+}
+
+.category-icons-scroll {
+  display: flex;
+
+  overflow-x: auto;
+
+  scroll-behavior: smooth;
+
+  gap: 15px;
+
+  padding: 10px 5px 15px 5px;
+
+  align-items: stretch;
+}
+
+/* Thanh cuộn ngang xám đậm dưới chân */
+
+.category-icons-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+
+.category-icons-scroll::-webkit-scrollbar-track {
+  background: #f1f1f1;
+
+  border-radius: 10px;
+}
+
+.category-icons-scroll::-webkit-scrollbar-thumb {
+  background: #666666;
+
+  border-radius: 10px;
+}
+
+.category-icons-scroll::-webkit-scrollbar-thumb:hover {
+  background: #004b87;
+}
+
+/* Khung ô vuông bo góc viền xám nhạt */
+
+.category-icon-item {
+  flex: 0 0 115px;
+
+  width: 115px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 12px;
+
+  padding: 15px 8px;
+
+  text-align: center;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: flex-start;
+
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+
+  box-sizing: border-box;
+}
+
+/* MẶC ĐỊNH: Ép toàn bộ ảnh thành XÁM TRẮNG ĐEN (grayscale 100%) */
+
+.category-icon-item img {
+  width: 45px;
+
+  height: 45px;
+
+  object-fit: contain;
+
+  margin-bottom: 10px;
+
+  display: block;
+
+  filter: grayscale(100%) opacity(0.65) !important;
+
+  transition: all 0.25s ease;
+}
+
+.category-icon-item p {
+  font-size: 12px;
+
+  line-height: 1.3;
+
+  color: #333333;
+
+  margin: 0;
+
+  font-weight: 500;
+
+  transition: color 0.25s ease;
+}
+
+/* CHỈ KHI RÊ CHUỘT (HOVER) MỚI ĐỔI SANG MÀU XANH HÃNG */
+
+.category-icon-item:hover {
+  transform: translateY(-5px);
+
+  border-color: #004b87;
+
+  box-shadow: 0 6px 16px rgba(0, 75, 135, 0.12);
+}
+
+.category-icon-item:hover img {
+  filter: grayscale(0%) opacity(1) !important;
+}
+
+.category-icon-item:hover p {
+  color: #004b87 !important;
+
+  font-weight: 700 !important;
+}
+
+/* Nút bấm mũi tên tròn 2 bên */
+
+.slider-arrow {
+  position: absolute;
+
+  top: 40%;
+
+  transform: translateY(-50%);
+
+  width: 38px;
+
+  height: 38px;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+
+  color: #004b87;
+
+  font-size: 16px;
+
+  cursor: pointer;
+
+  z-index: 10;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+
+  transition: all 0.2s ease;
+}
+
+.slider-arrow:hover {
+  background: #004b87;
+
+  color: #ffffff;
+
+  border-color: #004b87;
+}
+
+.prev-arrow {
+  left: 5px;
+}
+
+.next-arrow {
+  right: 5px;
+}
+
+.slider-nav-btn {
+  position: absolute;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  background: transparent;
+
+  border: none;
+
+  font-size: 20px;
+
+  color: #004b87;
+
+  cursor: pointer;
+}
+
+.slider-nav-btn.prev {
+  left: 15px;
+}
+
+.slider-nav-btn.next {
+  right: 15px;
+}
+
+/* 4. TIÊU ĐỀ SECTION PHẲNG CHUẨN MẪU */
+
+.main-section-title,
+.corner-title {
+  text-align: center;
+
+  font-size: 32px;
+
+  color: #004b87;
+
+  font-weight: 700;
+
+  margin: 45px 0 35px;
+
+  letter-spacing: -0.5px;
+}
+
+.corner-title {
+  text-align: left;
+}
+
+/* 5. KHỐI SẢN PHẨM NỔI BẬT */
+
+.container {
+  max-width: 1240px;
+
+  margin: 0 auto;
+
+  padding: 0 20px 40px;
+}
+
+.product-grid {
+  display: grid;
+
+  grid-template-columns: repeat(5, 1fr);
+
+  gap: 25px;
+}
+
+.product-card {
+  position: relative;
+
+  background: #ffffff;
+
+  padding: 15px 10px 20px;
+
+  text-align: center;
+
+  border-radius: 8px;
+
+  transition: all 0.3s ease;
+}
+
+.product-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Badge nhãn MỚI hình oval màu đỏ */
+
+.product-card .badge-new {
+  position: absolute;
+
+  top: 10px;
+
+  right: 15px;
+
+  background-color: #d32f2f;
+
+  color: #ffffff;
+
+  font-size: 11px;
+
+  font-weight: bold;
+
+  padding: 4px 10px;
+
+  border-radius: 12px;
+
+  z-index: 2;
+}
+
+.product-img-box {
+  width: 100%;
+
+  height: 180px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  cursor: pointer;
+
+  margin-bottom: 15px;
+}
+
+.product-img-box img {
+  max-width: 100%;
+
+  max-height: 100%;
+
+  object-fit: contain;
+}
+
+.product-card h3 {
+  font-size: 13.5px;
+
+  color: #333333;
+
+  font-weight: 500;
+
+  line-height: 1.4;
+
+  height: 38px;
+
+  overflow: hidden;
+
+  margin-bottom: 12px;
+
+  cursor: pointer;
+}
+
+.btn-add-quick {
+  background-color: #004b87;
+
+  color: #ffffff;
+
+  border: none;
+
+  padding: 8px 16px;
+
+  border-radius: 4px;
+
+  font-size: 12.5px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: background 0.2s;
+}
+
+.btn-add-quick:hover {
+  background-color: #002b54;
+}
+
+/* MENU DROPDOWN TÀI KHOẢN */
+
+.account-dropdown {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+}
+
+.account-icon-link {
+  color: #005691;
+
+  font-size: 16px;
+
+  text-decoration: none;
+
+  display: flex;
+
+  align-items: center;
+
+  transition: color 0.2s ease;
+}
+
+.account-icon-link:hover {
+  color: #0088cc;
+}
+
+.account-menu {
+  display: none;
+
+  position: absolute;
+
+  top: 100%;
+
+  right: 0;
+
+  background-color: #ffffff;
+
+  min-width: 140px;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+  border-radius: 6px;
+
+  padding: 6px 0;
+
+  z-index: 999;
+
+  border: 1px solid #eef2f5;
+}
+
+.account-dropdown:hover .account-menu {
+  display: block;
+}
+
+.account-menu a {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 8px 14px;
+
+  color: #333333;
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+  font-weight: 500;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.account-menu a:hover {
+  background-color: #f0f8ff;
+
+  color: #0088cc;
+}
+
+/* 6. BANNER PHỤ GIỮA TRANG */
+
+.middle-banner-section {
+  width: 100%;
+
+  margin: 40px 0;
+
+  text-align: center;
+}
+
+.middle-banner-container img {
+  max-width: 1200px;
+
+  width: 100%;
+
+  border-radius: 12px;
+}
+
+/* 7. KHỐI TH TRUE MART CHUẨN */
+
+.th-truemart-section {
+  position: relative !important;
+
+  display: block !important;
+
+  width: 100% !important;
+
+  clear: both !important;
+
+  margin-bottom: 40px !important;
+}
+
+.truemart-container-inner {
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 50px;
+}
+
+.truemart-content {
+  flex: 1;
+}
+
+.truemart-content h2 {
+  font-size: 32px;
+
+  color: #004b87;
+
+  font-weight: 700;
+
+  margin-bottom: 20px;
+}
+
+.truemart-content p {
+  font-size: 14.5px;
+
+  color: #555555;
+
+  line-height: 1.6;
+
+  margin-bottom: 25px;
+}
+
+.truemart-buttons {
+  display: flex;
+
+  gap: 15px;
+}
+
+.btn-truemart-store,
+.btn-truemart-online {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 10px 22px;
+
+  background-color: #004b87;
+
+  color: #ffffff;
+
+  border-radius: 6px;
+
+  text-decoration: none;
+
+  font-size: 13.5px;
+
+  font-weight: 600;
+}
+
+.btn-truemart-store:hover,
+.btn-truemart-online:hover {
+  background-color: #00335c;
+}
+
+.truemart-image {
+  flex: 1;
+
+  text-align: right;
+}
+
+.truemart-image img {
+  max-width: 480px;
+
+  width: 100%;
+
+  height: auto;
+}
+
+/* 8. KHỐI GÓC SỨC KHỎE */
+
+.health-corner-section {
+  position: relative !important;
+
+  display: block !important;
+
+  width: 100% !important;
+
+  clear: both !important;
+
+  background-color: #ffffff !important;
+
+  padding: 40px 20px 50px 20px !important;
+
+  margin-top: 20px !important;
+
+  z-index: 5 !important;
+}
+
+.health-container-inner {
+  max-width: 1200px;
+
+  margin: 0 auto;
+}
+
+.health-header {
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+
+  margin-bottom: 25px;
+}
+
+.health-title {
+  font-size: 28px;
+
+  color: #004b87;
+
+  font-weight: 700;
+
+  margin: 0;
+}
+
+.health-divider {
+  flex: 1;
+
+  height: 1px;
+
+  background-color: #e2e8f0;
+}
+
+.health-grid {
+  display: grid !important;
+
+  grid-template-columns: repeat(4, 1fr) !important;
+
+  gap: 25px !important;
+}
+
+.health-card {
+  display: flex;
+
+  flex-direction: column;
+}
+
+.health-img-box {
+  width: 100%;
+
+  height: 200px !important;
+
+  overflow: hidden;
+
+  border-radius: 4px;
+
+  margin-bottom: 12px;
+
+  background-color: #f8fafc;
+}
+
+.health-img-box img {
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover !important;
+}
+
+.health-card-title {
+  font-size: 14px;
+
+  color: #222222;
+
+  font-weight: 500;
+
+  line-height: 1.4;
+
+  margin: 0;
+}
+
+/* 9. KHỐI TRUYỀN THÔNG VÀ BÀI VIẾT */
+
+.media-section {
+  width: 100%;
+
+  background-color: #ffffff;
+
+  padding: 40px 20px 60px 20px;
+
+  clear: both;
+}
+
+.media-container-inner {
+  max-width: 1200px;
+
+  margin: 0 auto;
+}
+
+.section-header-line {
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+
+  margin-bottom: 30px;
+}
+
+.section-title-blue {
+  font-size: 30px;
+
+  color: #004b87;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+
+  margin: 0;
+
+  letter-spacing: -0.5px;
+}
+
+.section-divider {
+  flex: 1;
+
+  height: 1px;
+
+  background-color: #e2e8f0;
+}
+
+.media-layout {
+  display: grid;
+
+  grid-template-columns: 1.15fr 1fr;
+
+  gap: 40px;
+
+  align-items: start;
+}
+
+.media-main-img {
+  width: 100%;
+
+  height: 330px;
+
+  overflow: hidden;
+
+  border-radius: 4px;
+
+  margin-bottom: 15px;
+}
+
+.media-main-img img {
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.media-main-article h3 {
+  font-size: 15px;
+
+  color: #111111;
+
+  font-weight: 700;
+
+  line-height: 1.45;
+
+  margin-bottom: 8px;
+
+  text-transform: uppercase;
+}
+
+.media-date {
+  font-size: 12px;
+
+  color: #999999;
+
+  display: block;
+}
+
+.media-sidebar-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 22px;
+}
+
+.media-sub-item {
+  padding-bottom: 16px;
+
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.media-sub-item h4 {
+  font-size: 13.5px;
+
+  color: #222222;
+
+  font-weight: 700;
+
+  line-height: 1.45;
+
+  margin-bottom: 6px;
+
+  text-transform: uppercase;
+
+  transition: color 0.2s ease;
+
+  cursor: pointer;
+}
+
+.media-sub-item h4:hover {
+  color: #004b87;
+}
+
+.btn-view-more {
+  display: inline-block;
+
+  padding: 8px 26px;
+
+  border: 1px solid #d0d0d0;
+
+  color: #333333;
+
+  text-decoration: none;
+
+  font-size: 12.5px;
+
+  font-weight: 500;
+
+  border-radius: 4px;
+
+  transition: all 0.2s ease;
+
+  margin-top: 5px;
+}
+
+.btn-view-more:hover {
+  border-color: #004b87;
+
+  color: #004b87;
+}
+
+/* 10. HIỆU ỨNG HOVER TƯƠNG TÁC TOÀN HỆ THỐNG */
+
+.product-card,
+.health-card,
+.media-main-article,
+.media-sub-item {
+  transition:
+    transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+    box-shadow 0.3s ease !important;
+}
+
+.product-card:hover,
+.health-card:hover {
+  transform: translateY(-6px) !important;
+
+  box-shadow: 0 10px 20px rgba(0, 75, 135, 0.12) !important;
+}
+
+.category-icon-item {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease !important;
+}
+
+.category-icon-item:hover {
+  transform: translateY(-5px) !important;
+
+  box-shadow: 0 8px 16px rgba(0, 75, 135, 0.15) !important;
+
+  border-color: #004b87 !important;
+}
+
+div[style*="border-left"] {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease !important;
+}
+
+div[style*="border-left"]:hover {
+  transform: translateY(-4px) !important;
+
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08) !important;
+}
+
+button,
+.btn-order-now,
+.btn-view-more,
+.btn-checkout {
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease !important;
+}
+
+button:hover,
+.btn-order-now:hover,
+.btn-view-more:hover,
+.btn-checkout:hover {
+  transform: translateY(-3px) !important;
+
+  box-shadow: 0 5px 12px rgba(0, 75, 135, 0.25) !important;
+}
+
+.footer-logo-col img,
+.app-badges img,
+.footer-socials a {
+  transition: transform 0.25s ease !important;
+}
+
+.footer-logo-col img:hover,
+.app-badges img:hover,
+.footer-socials a:hover {
+  transform: translateY(-3px) scale(1.03) !important;
+}
+
+/* 11. FOOTER HỆ THỐNG DÙNG CHUNG PHIÊN BẢN MỞ RỘNG (4 CỘT) */
+
+.site-footer {
+  width: 100%;
+
+  background-color: #ffffff;
+
+  border-top: 1px solid #eaeaea;
+
+  padding: 50px 20px 30px 20px;
+
+  margin-top: 50px;
+}
+
+.footer-container-inner {
+  max-width: 1200px;
+
+  margin: 0 auto;
+}
+
+.footer-top-grid {
+  display: flex !important;
+
+  justify-content: space-between !important;
+
+  align-items: flex-start !important;
+
+  gap: 40px;
+
+  margin-bottom: 25px;
+}
+
+.footer-logo-col img {
+  max-width: 130px;
+
+  height: auto;
+}
+
+.footer-links {
+  list-style: none;
+
+  padding: 0;
+
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+.footer-links li a {
+  text-decoration: none;
+
+  color: #666666;
+
+  font-size: 13.5px;
+
+  transition: color 0.2s ease;
+}
+
+.footer-links li a:hover {
+  color: #004b87;
+}
+
+.app-title {
+  font-size: 13.5px;
+
+  color: #333333;
+
+  font-weight: 600;
+
+  margin-bottom: 10px;
+}
+
+.app-badges {
+  display: flex;
+
+  gap: 10px;
+}
+
+.app-badges img {
+  height: 34px;
+
+  width: auto;
+}
+
+.footer-socials {
+  display: flex;
+
+  gap: 15px;
+
+  margin-bottom: 25px;
+}
+
+.footer-socials a {
+  color: #004b87;
+
+  font-size: 16px;
+
+  text-decoration: none;
+
+  transition: opacity 0.2s;
+}
+
+.footer-socials a:hover {
+  opacity: 0.7;
+}
+
+.footer-bottom-info {
+  font-size: 12px;
+
+  color: #888888;
+
+  line-height: 1.6;
+}
+
+.footer-bottom-info p {
+  margin-bottom: 4px;
+}
+
+@media (max-width: 768px) {
+  .footer-top-grid {
+    flex-direction: column !important;
+
+    gap: 25px;
+  }
+}
+
+/* ==========================================================================
+   TH TRUE MILK — MOTION LAYER (consolidated)
+   Giữ tông xanh dương thương hiệu; animation nhẹ, ưu tiên hiệu năng.
+   ========================================================================== */
+:root {
+  --th-blue: #004b87;
+  --th-blue-dark: #00335c;
+  --th-motion-shadow: 0 12px 30px rgba(0, 75, 135, 0.12);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+button,
+.btn,
+a,
+.product-card {
+  -webkit-tap-highlight-color: transparent;
+}
+button,
+.btn {
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    background-color 0.22s ease;
+}
+button:active,
+.btn:active {
+  transform: scale(0.98);
+}
+
+/* Scroll reveal chỉ ẩn nội dung khi JS đã khởi tạo thành công. */
+html.motion-ready .reveal-on-scroll:not(.is-visible) {
+  opacity: 0;
+  transform: translate3d(0, 22px, 0);
+}
+.reveal-on-scroll {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition:
+    opacity 0.58s ease,
+    transform 0.58s cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+/* Stagger cho các thẻ sản phẩm được render động. */
+html.motion-ready .product-card.product-reveal:not(.product-reveal-visible) {
+  opacity: 0;
+  transform: translate3d(0, 16px, 0);
+}
+.product-card.product-reveal {
+  transition:
+    opacity 0.42s ease,
+    transform 0.42s cubic-bezier(0.2, 0.7, 0.3, 1),
+    box-shadow 0.28s ease;
+  transition-delay: var(--reveal-delay, 0ms);
+}
+.product-card.product-reveal.product-reveal-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+/* Tương tác sản phẩm, danh mục, bài viết và hình ảnh. */
+.product-card {
+  will-change: transform;
+}
+.product-card:hover,
+.health-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--th-motion-shadow);
+}
+.product-img-box img,
+.product-card .product-img-box img {
+  transition: transform 0.45s cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+.product-card:hover .product-img-box img {
+  transform: scale(1.045);
+}
+.category-icon-item {
+  transition:
+    transform 0.24s ease,
+    box-shadow 0.24s ease,
+    border-color 0.24s ease;
+}
+.category-icon-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0, 75, 135, 0.13);
+  border-color: var(--th-blue);
+}
+.middle-banner-container {
+  overflow: hidden;
+  border-radius: 12px;
+}
+.middle-banner-container img,
+.health-img-box img,
+.media-main-img img {
+  transition: transform 0.55s ease;
+}
+.middle-banner-container:hover img {
+  transform: scale(1.025);
+}
+.health-card:hover .health-img-box img,
+.media-main-article:hover .media-main-img img {
+  transform: scale(1.035);
+}
+
+.btn-truemart-store:hover,
+.btn-truemart-online:hover,
+.btn-add-quick:hover,
+.btn-view-more:hover {
+  transform: translateY(-2px);
+}
+
+input,
+select,
+textarea {
+  transition:
+    border-color 0.22s ease,
+    box-shadow 0.22s ease;
+}
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #1688c9;
+  outline-offset: 3px;
+}
+
+/* Toast dùng chung nếu các script khác tạo .th-toast. */
+.th-toast {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 9999;
+  max-width: calc(100vw - 32px);
+  padding: 14px 20px;
+  border-radius: 12px;
+  background: var(--th-blue-dark);
+  color: #fff;
+  box-shadow: 0 12px 32px rgba(0, 45, 80, 0.18);
+  animation: th-toast-in 0.3s ease both;
+}
+.th-toast.is-leaving {
+  animation: th-toast-out 0.22s ease both;
+}
+@keyframes th-toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes th-toast-out {
+  to {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+@media (max-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .health-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  .truemart-container-inner {
+    padding: 0 20px;
+    gap: 28px;
+  }
+}
+@media (max-width: 640px) {
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+  .main-section-title {
+    font-size: 26px;
+    margin: 32px 0 24px;
+  }
+  .category-slider-container {
+    padding-left: 38px;
+    padding-right: 38px;
+  }
+  .truemart-container-inner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .truemart-image {
+    text-align: center;
+  }
+  .media-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .media-main-img {
+    height: 240px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  html.motion-ready .reveal-on-scroll:not(.is-visible),
+  html.motion-ready .product-card.product-reveal:not(.product-reveal-visible),
+  .reveal-on-scroll,
+  .product-card.product-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* --- 1. HERO BANNER CHUYỂN ĐỘNG --- */
+.hero-banner {
+  position: relative;
+  width: 100%;
+  height: 480px;
+  background: url("/images/banners/banner_1.jpg") no-repeat center center;
+  background-size: cover; /* Phủ kín khung banner */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease forwards 0.3s;
+  margin-bottom: 12px;
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  color: #f1f1f1;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards 0.6s;
+  margin-bottom: 25px;
+}
+
+.btn-explore {
+  display: inline-block;
+  padding: 14px 35px;
+  background-color: #2e7d32;
+  color: white;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards 0.9s;
+}
+
+.btn-explore:hover {
+  background-color: #1b5e20;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- 2. PRODUCT CARD 3D & HOVER --- */
+.product-card {
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  transition:
+    transform 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+    box-shadow 0.4s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  position: relative;
+  will-change: transform;
+}
+
+.product-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(46, 125, 50, 0.15);
+}
+
+.product-card img {
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover img {
+  transform: scale(1.08) rotate(2deg);
+}
+
+/* Nút thêm vào giỏ trượt lên từ cạnh dưới */
+.product-actions {
+  position: absolute;
+  bottom: -50px;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 10px;
+  transition: bottom 0.3s ease;
+  text-align: center;
+}
+
+.product-card:hover .product-actions {
+  bottom: 0;
+}
+
+/* ===== TH TRUE MILK 3D MILK SPLASH SHOWCASE ===== */
+.milk-showcase {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  height: 320px;
+  margin: 35px 0 45px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  background:
+    radial-gradient(ellipse at 55% 70%, #ffffff 0%, #e8f7ff 38%, transparent 72%),
+    linear-gradient(180deg, #fafdff, #c5eaff);
+  border-radius: 16px;
+}
+
+.milk-glow {
+  position: absolute;
+  width: 430px;
+  height: 240px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  opacity: 0.65;
+  filter: blur(45px);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.milk-copy {
+  position: relative;
+  z-index: 3;
+  width: 32%;
+  padding-left: 5%;
+  animation: milkTextIn 1s ease both;
+}
+
+.milk-copy span {
+  color: #0088cc;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.milk-copy h2 {
+  color: #005691;
+  font-size: clamp(22px, 2.5vw, 34px);
+  line-height: 1.25;
+  margin: 12px 0;
+}
+
+.milk-copy p {
+  color: #46718d;
+  font-size: 14px;
+}
+
+.milk-products {
+  position: relative;
+  width: 48%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 900px;
+  z-index: 2;
+}
+
+.milk-pack {
+  position: absolute;
+  width: 105px;
+  height: 170px;
+  box-sizing: border-box;
+  padding-top: 28px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 8px 8px 13px 13px;
+  background: linear-gradient(110deg, #d8f5ff, #fff 35%, #eafaff 72%, #b5e8ff);
+  box-shadow:
+    inset -8px 0 12px rgba(0, 100, 160, 0.08),
+    0 20px 25px rgba(0, 75, 135, 0.2);
+  transform-style: preserve-3d;
+  opacity: 0;
+  animation:
+    milkPackPop 1s cubic-bezier(0.18, 0.85, 0.32, 1.25) forwards,
+    milkPackFloat 3s ease-in-out 1s infinite;
+}
+
+.milk-pack::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 15px;
+  background: linear-gradient(135deg, #b4e7ff, #fff, #a8dfff);
+  clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%);
+}
+
+.pack-cap {
+  position: absolute;
+  width: 25px;
+  height: 12px;
+  top: -11px;
+  left: 40px;
+  border-radius: 4px 4px 1px 1px;
+  background: repeating-linear-gradient(90deg, #e8faff 0 3px, #80c8ed 3px 5px);
+  border: 1px solid #9acfe9;
+}
+
+.pack-logo {
+  color: #005691;
+  font-family: Georgia, serif;
+  font-size: 25px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.pack-logo span {
+  display: block;
+  color: #009bd8;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.pack-name {
+  margin-top: 9px;
+  color: #0088cc;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.pack-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 8px 3px;
+  background: linear-gradient(90deg, #0065a7, #009bd8);
+  border-radius: 0 0 11px 11px;
+  color: #fff;
+  font-size: 7px;
+  font-weight: 800;
+}
+
+.pack-left {
+  left: 7%;
+  top: 28%;
+  --tilt: -15deg;
+  animation-delay: 0.1s, 1.1s;
+  z-index: 1;
+}
+
+.pack-center {
+  width: 125px;
+  height: 195px;
+  top: 20%;
+  --tilt: 0deg;
+  z-index: 3;
+  animation-delay: 0.3s, 1.3s;
+}
+
+.pack-right {
+  right: 7%;
+  top: 30%;
+  --tilt: 14deg;
+  background: linear-gradient(110deg, #fff0db, #fff, #f7d6b2);
+  animation-delay: 0.5s, 1.5s;
+  z-index: 1;
+}
+
+.pack-right .pack-bottom {
+  background: linear-gradient(90deg, #a96024, #d58a48);
+}
+
+.milk-splash {
+  position: absolute;
+  width: 55%;
+  height: 85%;
+  left: 39%;
+  top: 6%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.splash {
+  position: absolute;
+  width: 42%;
+  height: 48%;
+  top: 25%;
+  border: 15px solid rgba(255, 255, 255, 0.95);
+  filter: drop-shadow(0 4px 8px rgba(255, 255, 255, 0.8));
+  animation: splashPulse 3s ease-in-out infinite;
+}
+
+.splash-left {
+  left: 0;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-radius: 80% 15% 70% 20%;
+  transform: rotate(-35deg);
+}
+
+.splash-right {
+  right: 0;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  border-radius: 15% 80% 20% 70%;
+  transform: rotate(35deg);
+  animation-delay: 0.4s;
+}
+
+.milk-drop {
+  position: absolute;
+  width: 13px;
+  height: 23px;
+  background: linear-gradient(135deg, #fff, #e2f7ff);
+  border-radius: 80% 20% 65% 35%;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.9);
+  animation: milkDropFly 2.6s ease-in-out infinite;
+}
+
+.drop-1 {
+  left: 12%;
+  top: 28%;
+  --x: -25px;
+  --y: -25px;
+}
+.drop-2 {
+  left: 28%;
+  top: 8%;
+  --x: -15px;
+  --y: -35px;
+  animation-delay: 0.3s;
+}
+.drop-3 {
+  left: 78%;
+  top: 20%;
+  --x: 25px;
+  --y: -25px;
+  animation-delay: 0.5s;
+}
+.drop-4 {
+  left: 90%;
+  top: 50%;
+  --x: 30px;
+  --y: 0px;
+  animation-delay: 0.8s;
+}
+.drop-5 {
+  left: 20%;
+  top: 65%;
+  --x: -30px;
+  --y: 20px;
+  animation-delay: 0.6s;
+}
+.drop-6 {
+  left: 72%;
+  top: 72%;
+  --x: 25px;
+  --y: 20px;
+  animation-delay: 1s;
+}
+
+.milk-platform {
+  position: absolute;
+  z-index: 0;
+  bottom: -55px;
+  left: 45%;
+  width: 310px;
+  height: 105px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: linear-gradient(#fff, #d7f2ff);
+  box-shadow: 0 -5px 35px rgba(255, 255, 255, 0.9);
+}
+
+@keyframes milkPackPop {
+  0% {
+    opacity: 0;
+    transform: translateY(100px) rotateX(25deg) rotateZ(var(--tilt)) scale(0.4);
+  }
+  70% {
+    opacity: 1;
+    transform: translateY(-12px) rotateX(0) rotateZ(var(--tilt)) scale(1.08);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotateX(0) rotateZ(var(--tilt)) scale(1);
+  }
+}
+
+@keyframes milkPackFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotateZ(var(--tilt));
+  }
+  50% {
+    transform: translateY(-10px) rotateZ(var(--tilt));
+  }
+}
+
+@keyframes splashPulse {
+  0%,
+  100% {
+    scale: 0.92;
+    opacity: 0.7;
+  }
+  50% {
+    scale: 1.08;
+    opacity: 1;
+  }
+}
+
+@keyframes milkDropFly {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(0.7) rotate(0deg);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(var(--x), var(--y)) scale(1.2) rotate(35deg);
+    opacity: 1;
+  }
+}
+
+@keyframes milkTextIn {
+  from {
+    opacity: 0;
+    transform: translateX(-25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .milk-showcase {
+    height: 280px;
+    margin: 25px 0;
+  }
+
+  .milk-copy {
+    width: 40%;
+    padding-left: 5%;
+  }
+
+  .milk-copy h2 {
+    font-size: 20px;
+  }
+
+  .milk-copy p {
+    font-size: 12px;
+  }
+
+  .milk-products {
+    width: 55%;
+    transform: scale(0.8);
+  }
+
+  .milk-pack {
+    transform-origin: center;
+  }
+
+  .milk-splash {
+    left: 40%;
+    width: 58%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .milk-pack,
+  .milk-drop,
+  .splash,
+  .milk-copy {
+    animation: none !important;
+    opacity: 1;
+  }
+}
+
+/* Ảnh bao bì sữa TH true MILK thật */
+.milk-products .real-milk-pack {
+  position: absolute;
+  display: block;
+  object-fit: contain;
+  height: 185px;
+  width: 120px;
+  opacity: 0;
+  filter: drop-shadow(0 15px 12px rgba(0, 65, 110, 0.2));
+  animation:
+    realMilkPop 0.9s cubic-bezier(0.18, 0.85, 0.32, 1.25) forwards,
+    realMilkFloat 3s ease-in-out 0.9s infinite;
+}
+
+.milk-products .pack-left {
+  left: 5%;
+  top: 30%;
+  --tilt: -15deg;
+  animation-delay: 0.1s, 1s;
+}
+
+.milk-products .pack-center {
+  width: 145px;
+  height: 220px;
+  top: 13%;
+  left: 50%;
+  --tilt: 0deg;
+  z-index: 3;
+  animation-delay: 0.3s, 1.2s;
+}
+
+.milk-products .pack-right {
+  right: 4%;
+  top: 28%;
+  --tilt: 14deg;
+  animation-delay: 0.5s, 1.4s;
+}
+
+@keyframes realMilkPop {
+  from {
+    opacity: 0;
+    transform: translateY(100px) rotate(var(--tilt)) scale(0.55);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(var(--tilt)) scale(1);
+  }
+}
+
+@keyframes realMilkFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(var(--tilt));
+  }
+  50% {
+    transform: translateY(-10px) rotate(var(--tilt));
+  }
+}
+
+@media (max-width: 768px) {
+  .milk-products .real-milk-pack {
+    width: 85px;
+    height: 145px;
+  }
+
+  .milk-products .pack-center {
+    width: 105px;
+    height: 175px;
+  }
+}
+
+/* ===== ẢNH HỘP SỮA THẬT + HIỆU ỨNG BẬT LÊN ===== */
+
+.milk-showcase {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.milk-products {
+  position: absolute;
+  z-index: 3;
+  left: 40%;
+  top: 0;
+  width: 55%;
+  height: 100%;
+  perspective: 1000px;
+}
+
+.milk-products .real-milk-pack {
+  position: absolute;
+  display: block;
+  object-fit: contain;
+  object-position: center bottom;
+  width: 125px;
+  height: 190px;
+  opacity: 0;
+  filter: drop-shadow(0 15px 12px rgba(0, 65, 110, 0.22));
+  transform-origin: center bottom;
+  animation:
+    realMilkPop 0.9s cubic-bezier(0.18, 0.85, 0.32, 1.25) forwards,
+    realMilkFloat 3s ease-in-out 1s infinite;
+}
+
+.milk-products .pack-left {
+  left: 5%;
+  top: 28%;
+  --tilt: -14deg;
+  animation-delay: 0.1s, 1s;
+}
+
+.milk-products .pack-center {
+  width: 145px;
+  height: 225px;
+  left: 35%;
+  top: 14%;
+  --tilt: 0deg;
+  z-index: 4;
+  animation-delay: 0.3s, 1.2s;
+}
+
+.milk-products .pack-right {
+  width: 120px;
+  height: 185px;
+  right: 5%;
+  top: 29%;
+  --tilt: 14deg;
+  animation-delay: 0.5s, 1.4s;
+}
+
+@keyframes realMilkPop {
+  0% {
+    opacity: 0;
+    transform: translateY(100px) rotate(var(--tilt)) scale(0.5);
+  }
+  75% {
+    opacity: 1;
+    transform: translateY(-10px) rotate(var(--tilt)) scale(1.06);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotate(var(--tilt)) scale(1);
+  }
+}
+
+@keyframes realMilkFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(var(--tilt));
+  }
+  50% {
+    transform: translateY(-10px) rotate(var(--tilt));
+  }
+}
+
+@media (max-width: 768px) {
+  .milk-showcase {
+    min-height: 280px;
+  }
+
+  .milk-copy {
+    width: 40%;
+    padding-left: 4%;
+  }
+
+  .milk-products {
+    left: 39%;
+    width: 60%;
+  }
+
+  .milk-products .real-milk-pack {
+    width: 75px;
+    height: 135px;
+  }
+
+  .milk-products .pack-center {
+    width: 95px;
+    height: 165px;
+    left: 30%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .milk-products .real-milk-pack {
+    animation: none;
+    opacity: 1;
+    transform: rotate(var(--tilt));
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#san-pham-noi-bat,
+#tai-che,
+#th-true-mart,
+#goc-suc-khoe {
+  scroll-margin-top: 100px;
+}
+
+.lang-selector {
+  position: relative;
+}
+
+.lang-selector-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.lang-selector img,
+.lang-dropdown img {
+  width: 20px;
+  height: auto;
+  object-fit: cover;
+}
+
+.lang-dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  min-width: 180px;
+  max-height: 280px;
+  overflow-y: auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  z-index: 9999;
+  padding: 6px 0;
+}
+
+.lang-dropdown.show {
+  display: block;
+}
+
+.lang-dropdown button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 14px;
+  border: none;
+  background: #fff;
+  color: #333;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: normal;
+  text-align: left;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.lang-dropdown button:hover {
+  background: #f0f7fa;
+}
+
+/* Nút chọn quốc gia - phong cách TH true MILK */
+.lang-selector-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 7px 10px;
+  border: 1px solid #dce8ef;
+  border-radius: 20px;
+  background: #fff;
+  color: #00549a;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.lang-selector-btn:hover {
+  background: #f0f7fc;
+  border-color: #80b7dc;
+}
+
+.lang-selector-btn img {
+  display: block;
+  width: 20px;
+  height: 14px;
+  object-fit: cover;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.lang-selector-btn span {
+  display: inline-block;
+  min-width: 18px;
+  color: #00549a;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+}
+
+.lang-selector-btn .fa-caret-down {
+  color: #00549a;
+  font-size: 11px;
+  margin-left: 1px;
+}
+
+.health-card a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.health-card a:hover {
+  text-decoration: none;
+}
+
+.health-card a h3 {
+  text-decoration: none;
+}
+
+/* ===== TH TRUE MILK FLASH SALE BANNER ===== */
+.flash-sale-section {
+  width: 100%;
+  padding: 18px 24px;
+  box-sizing: border-box;
+  background: #fff;
+}
+.flash-sale-banner {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  width: 100%;
+  max-width: none;
+  min-height: 210px;
+  margin: 0;
+  padding: 28px 34px;
+  box-sizing: border-box;
+
+  display: grid;
+  grid-template-columns:
+    100px minmax(250px, 1.25fr)
+    minmax(260px, 1fr) 180px;
+  align-items: center;
+  gap: 24px;
+
+  background: linear-gradient(115deg, #edf7fc 0%, #fff 52%, #f0f8ed 100%);
+  border: 1px solid #dcebf3;
+  border-radius: 60px 90px 60px 90px;
+  box-shadow: 0 8px 25px rgba(0, 84, 154, 0.06);
+}
+
+.flash-sale-brand {
+  position: relative;
+  z-index: 1;
+  width: 92px;
+  height: 112px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(145deg, #1688cc, #00549a);
+  border-radius: 50% 50% 44% 48%;
+  color: #fff;
+  transform: rotate(-5deg);
+  box-shadow: 7px 8px 0 rgba(0, 84, 154, 0.08);
+}
+
+.flash-sale-brand-text {
+  font-family: Georgia, serif;
+  font-size: 37px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.flash-sale-brand-sub {
+  margin-top: 5px;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+.flash-sale-info,
+.flash-sale-timer,
+.flash-sale-action {
+  position: relative;
+  z-index: 1;
+}
+
+.flash-sale-eyebrow {
+  color: #00549a;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.flash-sale-info h2 {
+  margin: 7px 0;
+  color: #00549a;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(30px, 3vw, 43px);
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+.flash-sale-leaf {
+  display: inline-block;
+  margin-left: 8px;
+  color: #76a95c;
+  font-family: Arial, sans-serif;
+  font-size: 22px;
+  vertical-align: top;
+}
+
+.flash-sale-info p {
+  margin: 8px 0 0;
+  color: #426477;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.flash-sale-timer-label {
+  margin-bottom: 13px;
+  color: #00549a;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.flash-sale-timer-label span {
+  margin-right: 5px;
+  font-size: 19px;
+}
+
+.flash-sale-clock {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.flash-sale-time {
+  width: 58px;
+  height: 66px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #d9e9f1;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 84, 154, 0.06);
+}
+
+.flash-sale-time span {
+  color: #00549a;
+  font-size: 21px;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.flash-sale-time small {
+  color: #527487;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.flash-sale-clock > b {
+  color: #4c91c2;
+  font-size: 17px;
+}
+
+.flash-sale-slogan {
+  margin: 0 0 18px;
+  color: #00549a;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 18px;
+  font-style: italic;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.flash-sale-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 17px;
+  background: linear-gradient(100deg, #0878bd, #00549a);
+  border-radius: 28px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.flash-sale-button:hover {
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 14px rgba(0, 84, 154, 0.2);
+}
+
+.flash-sale-button span {
+  font-size: 18px;
+}
+
+.flash-sale-button.disabled {
+  background: #9aa8b3;
+  pointer-events: none;
+  cursor: default;
+}
+
+.flash-sale-message {
+  position: relative;
+  z-index: 1;
+  grid-column: 2 / 5;
+  margin: -12px 0 0;
+  color: #438151;
+  font-size: 11px;
+}
+
+.flash-sale-wave {
+  position: absolute;
+  z-index: 0;
+  left: 35%;
+  right: -5%;
+  bottom: -90px;
+  height: 150px;
+  border: 5px solid rgba(128, 184, 104, 0.45);
+  border-color: #b9dda8 transparent transparent transparent;
+  border-radius: 50%;
+  transform: rotate(-2deg);
+  pointer-events: none;
+}
+
+.flash-sale-deco {
+  position: absolute;
+  z-index: 0;
+  color: #9fc88a;
+  pointer-events: none;
+}
+
+.flash-sale-deco-one {
+  top: 20px;
+  right: 23%;
+  font-size: 23px;
+}
+
+.flash-sale-deco-two {
+  bottom: 28px;
+  left: 28%;
+  font-size: 15px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .flash-sale-banner {
+    grid-template-columns: 75px 1fr 1fr;
+    gap: 16px;
+    padding: 24px;
+    border-radius: 38px;
+  }
+
+  .flash-sale-brand {
+    width: 72px;
+    height: 90px;
+  }
+
+  .flash-sale-brand-text {
+    font-size: 30px;
+  }
+
+  .flash-sale-brand-sub {
+    font-size: 10px;
+  }
+
+  .flash-sale-action {
+    grid-column: 2 / 4;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .flash-sale-slogan {
+    margin: 0;
+    text-align: left;
+    font-size: 15px;
+  }
+
+  .flash-sale-button {
+    min-width: 135px;
+  }
+
+  .flash-sale-message {
+    grid-column: 2 / 4;
+    margin: -5px 0 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .flash-sale-section {
+    padding: 12px;
+  }
+
+  .flash-sale-banner {
+    grid-template-columns: 1fr;
+    gap: 17px;
+    padding: 22px;
+    border-radius: 28px 48px 28px 48px;
+  }
+
+  .flash-sale-brand {
+    width: 64px;
+    height: 72px;
+  }
+
+  .flash-sale-brand-text {
+    font-size: 26px;
+  }
+
+  .flash-sale-brand-sub {
+    font-size: 9px;
+  }
+
+  .flash-sale-info h2 {
+    font-size: 32px;
+  }
+
+  .flash-sale-timer-label {
+    margin-bottom: 9px;
+  }
+
+  .flash-sale-clock {
+    gap: 9px;
+  }
+
+  .flash-sale-time {
+    width: 56px;
+    height: 60px;
+  }
+
+  .flash-sale-time span {
+    font-size: 19px;
+  }
+
+  .flash-sale-action {
+    grid-column: auto;
+    justify-content: space-between;
+  }
+
+  .flash-sale-slogan {
+    font-size: 14px;
+  }
+
+  .flash-sale-message {
+    grid-column: auto;
+    margin: 0;
+  }
+
+  .flash-sale-wave {
+    left: 10%;
+  }
+}
+
+/* ===== FLASH SALE MOTION EFFECTS ===== */
+
+/* Banner xuất hiện nhẹ nhàng */
+@keyframes flashSaleEnter {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.flash-sale-banner {
+  animation: flashSaleEnter 0.8s ease-out both;
+}
+
+/* Logo nổi nhẹ */
+.flash-sale-brand {
+  animation: flashBrandFloat 3.5s ease-in-out infinite;
+}
+
+@keyframes flashBrandFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-5deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(-3deg);
+  }
+}
+
+/* Tiêu đề sáng nhẹ */
+.flash-sale-info h2 {
+  animation: flashTitleGlow 3s ease-in-out infinite;
+}
+
+@keyframes flashTitleGlow {
+  0%,
+  100% {
+    text-shadow: 0 0 0 rgba(0, 84, 154, 0);
+  }
+  50% {
+    text-shadow: 0 3px 15px rgba(0, 84, 154, 0.13);
+  }
+}
+
+/* Đồng hồ nhún nhẹ */
+.flash-sale-time {
+  animation: flashTimerFloat 2.8s ease-in-out infinite;
+}
+
+.flash-sale-time:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.flash-sale-time:nth-child(5) {
+  animation-delay: 0.4s;
+}
+
+@keyframes flashTimerFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+/* Đường cong xanh lá chuyển động */
+.flash-sale-wave {
+  animation: flashWaveMove 6s ease-in-out infinite alternate;
+}
+
+@keyframes flashWaveMove {
+  from {
+    transform: translateX(-12px) rotate(-2deg);
+  }
+  to {
+    transform: translateX(15px) rotate(1deg);
+  }
+}
+
+/* Các điểm trang trí nhấp nháy nhẹ */
+.flash-sale-deco-one {
+  animation: flashSparkle 2.5s ease-in-out infinite;
+}
+
+.flash-sale-deco-two {
+  animation: flashSparkle 3s ease-in-out infinite reverse;
+}
+
+@keyframes flashSparkle {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(0.85) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15) rotate(18deg);
+  }
+}
+
+/* Nút mua ngay thu hút hơn */
+.flash-sale-button {
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.flash-sale-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 7px 18px rgba(0, 84, 154, 0.22);
+}
+
+.flash-sale-button span {
+  display: inline-block;
+  transition: transform 0.25s ease;
+}
+
+.flash-sale-button:hover span {
+  transform: translateX(4px);
+}
+
+/* Tắt chuyển động nếu người dùng chọn giảm hiệu ứng */
+@media (prefers-reduced-motion: reduce) {
+  .flash-sale-banner,
+  .flash-sale-brand,
+  .flash-sale-info h2,
+  .flash-sale-time,
+  .flash-sale-wave,
+  .flash-sale-deco-one,
+  .flash-sale-deco-two {
+    animation: none !important;
+  }
+
+  .flash-sale-button,
+  .flash-sale-button span {
+    transition: none !important;
+  }
+}
+
+/* ===== FLASH SALE - STRONG MOTION ===== */
+
+/* Banner trượt mạnh vào từ bên trái */
+.flash-sale-banner {
+  animation: flashSaleSlam 0.85s cubic-bezier(0.16, 1.3, 0.3, 1) both;
+  transform-origin: left center;
+}
+
+@keyframes flashSaleSlam {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px) scale(0.92);
+  }
+  65% {
+    opacity: 1;
+    transform: translateX(12px) scale(1.015);
+  }
+  82% {
+    transform: translateX(-5px) scale(0.995);
+  }
+  100% {
+    transform: translateX(0) scale(1);
+  }
+}
+
+/* Logo hoặc ảnh sản phẩm bật lên mạnh */
+.flash-sale-brand {
+  animation: flashBrandBounce 1.5s ease-in-out infinite;
+}
+
+@keyframes flashBrandBounce {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-5deg) scale(1);
+  }
+  35% {
+    transform: translateY(-13px) rotate(4deg) scale(1.08);
+  }
+  55% {
+    transform: translateY(2px) rotate(-2deg) scale(0.97);
+  }
+  75% {
+    transform: translateY(-5px) rotate(2deg) scale(1.03);
+  }
+}
+
+/* Đồng hồ nảy theo nhịp */
+.flash-sale-time {
+  animation: flashTimerPunch 1.2s ease-in-out infinite;
+  box-shadow: 0 5px 15px rgba(0, 84, 154, 0.12);
+}
+
+.flash-sale-time:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.flash-sale-time:nth-child(3) {
+  animation-delay: 0.15s;
+}
+
+.flash-sale-time:nth-child(5) {
+  animation-delay: 0.3s;
+}
+
+@keyframes flashTimerPunch {
+  0%,
+  100% {
+    transform: scale(1) rotate(0);
+  }
+  30% {
+    transform: scale(1.14) rotate(-3deg);
+  }
+  50% {
+    transform: scale(0.94) rotate(2deg);
+  }
+  70% {
+    transform: scale(1.06) rotate(0);
+  }
+}
+
+/* Tia sáng quét qua banner */
+.flash-sale-banner::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: -60%;
+  left: -45%;
+  width: 24%;
+  height: 220%;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.85), transparent);
+  transform: rotate(22deg);
+  animation: flashLightSweep 3s ease-in-out infinite;
+}
+
+@keyframes flashLightSweep {
+  0%,
+  15% {
+    left: -45%;
+  }
+  70%,
+  100% {
+    left: 135%;
+  }
+}
+
+/* Đường cong chuyển động rõ hơn */
+.flash-sale-wave {
+  animation: flashWaveStrong 3s ease-in-out infinite alternate;
+}
+
+@keyframes flashWaveStrong {
+  0% {
+    transform: translateX(-35px) rotate(-7deg) scaleY(0.8);
+  }
+  100% {
+    transform: translateX(35px) rotate(5deg) scaleY(1.3);
+  }
+}
+
+/* Họa tiết xoay và phóng lớn */
+.flash-sale-deco-one {
+  animation: flashStarSpin 2s linear infinite;
+}
+
+.flash-sale-deco-two {
+  animation: flashStarBounce 0.9s ease-in-out infinite alternate;
+}
+
+@keyframes flashStarSpin {
+  from {
+    transform: rotate(0deg) scale(0.7);
+  }
+  to {
+    transform: rotate(360deg) scale(1.25);
+  }
+}
+
+@keyframes flashStarBounce {
+  from {
+    transform: translateY(0) scale(0.7);
+  }
+  to {
+    transform: translateY(-12px) scale(1.5);
+  }
+}
+
+/* Nút mua ngay đập nhịp nổi bật */
+.flash-sale-button {
+  animation: flashButtonPulse 1.3s ease-in-out infinite;
+}
+
+@keyframes flashButtonPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(0, 84, 154, 0.25);
+  }
+  50% {
+    transform: scale(1.08);
+    box-shadow: 0 0 0 9px rgba(0, 84, 154, 0);
+  }
+}
+
+.flash-sale-button:hover {
+  animation-play-state: paused;
+  transform: scale(1.1);
+  background: #397c50;
+}
+
+/* Giảm chuyển động nếu người dùng đã bật tùy chọn này */
+@media (prefers-reduced-motion: reduce) {
+  .flash-sale-banner,
+  .flash-sale-brand,
+  .flash-sale-time,
+  .flash-sale-banner::after,
+  .flash-sale-wave,
+  .flash-sale-deco-one,
+  .flash-sale-deco-two,
+  .flash-sale-button {
+    animation: none !important;
+  }
+}

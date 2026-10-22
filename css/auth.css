@@ -1,0 +1,353 @@
+/* ==========================================================================
+   FILE: css/auth.css
+   MÔ TẢ: CSS riêng cho trang Đăng nhập & Đăng ký, thiết kế khung Card căn giữa,
+          hiệu ứng focus input, nút bấm và đồng bộ chung Footer cùng hiệu ứng Hover toàn hệ thống.
+   ========================================================================== */
+
+/* 1. KHUNG GIAO DIỆN CHÍNH TRANG ĐĂNG NHẬP / ĐĂNG KÝ */
+.auth-section {
+  padding: 50px 20px;
+  background-color: #f7fafc; /* Màu nền xám nhạt dịu mắt */
+  min-height: 65vh; /* Chiều cao tối thiểu chiếm 65% màn hình */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Căn giữa tuyệt đối khung auth-card */
+}
+
+/* Khung thẻ chứa form (Card form) */
+.auth-card {
+  background: #ffffff;
+  width: 100%;
+  max-width: 440px;
+  padding: 35px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* Đổ bóng nhẹ sang trọng */
+  border: 1px solid #eef2f5;
+  box-sizing: border-box;
+}
+
+/* Phần tiêu đề của khung đăng nhập/đăng ký */
+.auth-header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.auth-header h2 {
+  color: #005691; /* Màu xanh thương hiệu TH */
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.auth-header p {
+  color: #666666;
+  font-size: 13px;
+}
+
+/* Thiết kế các nhóm trường nhập liệu (Form Group) */
+.auth-form .form-group {
+  margin-bottom: 18px;
+}
+
+.auth-form label {
+  display: block;
+  font-size: 13px;
+  color: #333333;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.auth-form .input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Icon bên trong ô nhập liệu (email, password...) */
+.auth-form .input-wrapper i {
+  position: absolute;
+  left: 12px;
+  color: #0088cc;
+  font-size: 14px;
+}
+
+/* Ô nhập liệu input */
+.auth-form input {
+  width: 100%;
+  padding: 11px 12px 11px 36px; /* Chừa lề trái 36px để không bị đè icon */
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s ease;
+  box-sizing: border-box;
+}
+
+/* Hiệu ứng khi người dùng bấm vào ô nhập (Focus) */
+.auth-form input:focus {
+  border-color: #0088cc;
+}
+
+/* Các hành động phụ dưới form (Quên mật khẩu, ghi nhớ...) */
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+.forgot-pass {
+  color: #0088cc;
+  text-decoration: none;
+}
+
+.forgot-pass:hover {
+  text-decoration: underline;
+}
+
+/* Nút bấm xác nhận Đăng nhập / Đăng ký */
+.btn-auth-submit {
+  width: 100%;
+  padding: 12px;
+  background-color: #005691;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-auth-submit:hover {
+  background-color: #0088cc;
+}
+
+/* Đường dẫn chuyển đổi giữa trang Đăng nhập và Đăng ký */
+.auth-footer-link {
+  text-align: center;
+  margin-top: 22px;
+  font-size: 13px;
+  color: #666666;
+}
+
+.auth-footer-link a {
+  color: #0088cc;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.auth-footer-link a:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   FOOTER HỆ THỐNG DÙNG CHUNG TOÀN BỘ TRANG WEB
+   ========================================================================== */
+.site-footer {
+  width: 100%;
+  background-color: #ffffff;
+  border-top: 1px solid #eaeaea;
+  padding: 40px 20px 30px 20px;
+  color: #333333;
+  clear: both;
+}
+
+.footer-container-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-logo-center {
+  margin-bottom: 25px;
+}
+
+.footer-logo-center img {
+  height: 48px;
+  object-fit: contain;
+}
+
+/* Bố cục lưới chia các cột thông tin trong Footer */
+.footer-links-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1.5fr; /* Chia 3 cột tỷ lệ */
+  gap: 30px;
+  margin-bottom: 25px;
+  align-items: start;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links li a {
+  text-decoration: none;
+  color: #555555;
+  font-size: 13.5px;
+  transition: color 0.2s ease;
+}
+
+.footer-links li a:hover {
+  color: #004b87;
+}
+
+.app-title {
+  font-size: 13.5px;
+  color: #333333;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.app-badges {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.app-badges img {
+  height: 35px;
+  width: auto;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.footer-socials a {
+  color: #004b87;
+  font-size: 18px;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.footer-socials a:hover {
+  opacity: 0.7;
+}
+
+.footer-bottom-info {
+  font-size: 12px;
+  color: #777777;
+  line-height: 1.6;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 20px;
+}
+
+.footer-bottom-info p {
+  margin-bottom: 4px;
+}
+
+/* Responsive cho màn hình thiết bị di động (Mobile) */
+@media (max-width: 768px) {
+  .footer-links-grid {
+    grid-template-columns: 1fr; /* Thu gọn thành 1 cột dọc trên màn hình nhỏ */
+    gap: 20px;
+  }
+}
+
+/* ==========================================================================
+   HIỆU ỨNG HOVER TƯƠNG TÁC NỔI LÊN TRÊN TOÀN HỆ THỐNG
+   ========================================================================== */
+
+/* 1. Các thẻ sản phẩm (Product Cards), bài viết sức khỏe và truyền thông */
+.product-card,
+.health-card,
+.media-main-article,
+.media-sub-item {
+  transition:
+    transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+    box-shadow 0.3s ease !important;
+}
+
+.product-card:hover,
+.health-card:hover {
+  transform: translateY(-6px) !important; /* Nổi lên trên 6px khi rê chuột */
+  box-shadow: 0 10px 20px rgba(0, 75, 135, 0.12) !important;
+}
+
+/* 2. Các icon danh mục trượt ngang */
+.category-icon-item {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease !important;
+}
+
+.category-icon-item:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 8px 16px rgba(0, 75, 135, 0.15) !important;
+  border-color: #004b87 !important;
+}
+
+/* 3. Các khối đặc điểm 1 đến 7 trên trang Chi Tiết Sản Phẩm (CTSP) */
+div[style*="border-left"] {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease !important;
+}
+
+div[style*="border-left"]:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* 4. Các nút bấm (Buttons) toàn hệ thống */
+button,
+.btn-order-now,
+.btn-view-more,
+.btn-checkout {
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease !important;
+}
+
+button:hover,
+.btn-order-now:hover,
+.btn-view-more:hover,
+.btn-checkout:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 5px 12px rgba(0, 75, 135, 0.25) !important;
+}
+
+/* 5. Logo và các Badge Tải ứng dụng ở Footer */
+.footer-logo-col img,
+.app-badges img,
+.footer-socials a {
+  transition: transform 0.25s ease !important;
+}
+
+.footer-logo-col img:hover,
+.app-badges img:hover,
+.footer-socials a:hover {
+  transform: translateY(-3px) scale(1.03) !important;
+}
+
+/* Căn chỉnh checkbox Ghi nhớ đăng nhập */
+.form-actions .remember-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 0;
+  font-weight: normal;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.form-actions .remember-label input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+  margin: 0;
+  padding: 0;
+  flex-shrink: 0;
+  accent-color: #005691;
+}

@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đăng ký tài khoản - TH true MILK</title>
+
+    <!-- FontAwesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- CSS hệ thống -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/auth.css" />
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="nav-container">
+        <div class="logo">
+          <a href="index.html">
+            <img src="images/banners/logo.png" alt="TH true MILK" />
+          </a>
+        </div>
+
+        <nav>
+          <ul>
+            <li><a href="products.html">SẢN PHẨM</a></li>
+            <li><a href="#">KHUYẾN MÃI</a></li>
+            <li><a href="#">CỬA HÀNG</a></li>
+            <li><a href="#">TRUYỀN THÔNG</a></li>
+            <li><a href="#">CHUYÊN GIA DINH DƯỠNG</a></li>
+            <li><a href="#">TUYỂN DỤNG</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-right-tools">
+          <div class="search-tool-wrapper">
+            <button
+              type="button"
+              class="btn-search-toggle"
+              id="searchToggleBtn"
+              onclick="toggleSearchBar()"
+              title="Tìm kiếm"
+              aria-expanded="false"
+            >
+              <i class="fa fa-search"></i>
+            </button>
+
+            <form
+              class="search-expand-form"
+              id="searchExpandForm"
+              action="search.html"
+              method="GET"
+            >
+              <input
+                type="text"
+                name="q"
+                id="searchExpandInput"
+                class="search-expand-input"
+                placeholder="Nhập tên sản phẩm..."
+                required
+              />
+              <button type="submit" class="search-expand-btn" title="Tìm kiếm">
+                <i class="fa fa-search"></i>
+              </button>
+            </form>
+          </div>
+
+          <div class="lang-selector">
+            <img src="https://flagcdn.com/w20/vn.png" alt="VN" /> VN
+            <i class="fa fa-caret-down"></i>
+          </div>
+
+          <div class="account-dropdown">
+            <a href="login.html" class="account-icon-link" title="Tài khoản">
+              <i class="fa fa-user"></i>
+            </a>
+
+            <div class="account-menu">
+              <a href="login.html"> <i class="fa fa-sign-in"></i> Đăng nhập </a>
+              <a href="register.html"> <i class="fa fa-user-plus"></i> Đăng ký </a>
+            </div>
+          </div>
+
+          <a href="cart.html" class="cart-icon-link">
+            <i class="fa fa-shopping-cart"></i>
+            <span id="cart-count-badge">0</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Nội dung đăng ký -->
+    <main class="auth-section">
+      <div class="auth-card">
+        <div class="auth-header">
+          <h2>Tạo Tài Khoản</h2>
+          <p>Đăng ký để nhận nhiều ưu đãi từ TH true MILK</p>
+        </div>
+
+        <form class="auth-form" id="registerForm" autocomplete="off">
+          <div class="form-group">
+            <label for="regName">Họ và tên</label>
+            <div class="input-wrapper">
+              <i class="fa fa-user"></i>
+              <input
+                type="text"
+                id="regName"
+                name="regName"
+                placeholder="Nhập họ và tên của bạn..."
+                autocomplete="off"
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="regPhone">Số điện thoại</label>
+            <div class="input-wrapper">
+              <i class="fa fa-phone"></i>
+              <input
+                type="tel"
+                id="regPhone"
+                name="regPhone"
+                placeholder="Nhập số điện thoại..."
+                autocomplete="off"
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="regEmail">Email</label>
+            <div class="input-wrapper">
+              <i class="fa fa-envelope"></i>
+              <input
+                type="email"
+                id="regEmail"
+                name="regEmail"
+                placeholder="Nhập địa chỉ email..."
+                autocomplete="off"
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="regPassword">Mật khẩu</label>
+            <div class="input-wrapper">
+              <i class="fa fa-lock"></i>
+              <input
+                type="password"
+                id="regPassword"
+                name="regPassword"
+                placeholder="Nhập mật khẩu (tối thiểu 6 ký tự)..."
+                autocomplete="new-password"
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="regConfirmPassword">Xác nhận mật khẩu</label>
+            <div class="input-wrapper">
+              <i class="fa fa-check-circle"></i>
+              <input
+                type="password"
+                id="regConfirmPassword"
+                name="regConfirmPassword"
+                placeholder="Nhập lại mật khẩu..."
+                autocomplete="new-password"
+              />
+            </div>
+          </div>
+
+          <button type="submit" class="btn-auth-submit">ĐĂNG KÝ TÀI KHOẢN</button>
+        </form>
+
+        <div class="auth-footer-link">Đã có tài khoản? <a href="login.html">Đăng nhập ngay</a></div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-container-inner">
+        <div class="footer-top-grid">
+          <div class="footer-col footer-logo-col">
+            <img src="images/banners/logo.png" alt="TH true MILK" />
+          </div>
+
+          <div class="footer-col">
+            <ul class="footer-links">
+              <li><a href="#">Liên hệ</a></li>
+              <li><a href="#">Chăm sóc khách hàng</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <ul class="footer-links">
+              <li><a href="#">Dịch vụ giao hàng tận nhà</a></li>
+              <li><a href="#">Chính sách &amp; Quy định chung</a></li>
+              <li><a href="#">Chính sách bảo mật</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col footer-app-col">
+            <div class="app-title">Tải Ứng Dụng</div>
+            <div class="app-badges">
+              <a href="#">
+                <img src="images/banners/appstore.svg" alt="App Store" />
+              </a>
+              <a href="#">
+                <img src="images/banners/googleplay.svg" alt="Google Play" />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-socials">
+          <a href="#"><img src="images/banners/fb.svg" alt="FB" /></a>
+          <a href="#"><img src="images/banners/ig.svg" alt="IG" /></a>
+          <a href="#"><img src="images/banners/ytb.svg" alt="YTB" /></a>
+        </div>
+
+        <div class="footer-bottom-info">
+          <p>Cơ quan chủ quản: Công ty Cổ phần Chuỗi Thực phẩm TH</p>
+          <p>
+            Trụ sở: Số 166 đường Nguyễn Thái Học, Phường Quang Trung, Thành phố Vinh, Tỉnh Nghệ An,
+            Việt Nam - Điện thoại: 1800545440
+          </p>
+          <p>
+            MST: 2901270911 - Số ĐKKD: 2901270911 cấp ngày 06/09/2010 bởi Sở KH và ĐT tỉnh Nghệ An
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="effects.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/auth.js"></script>
+  </body>
+</html>
